@@ -15,4 +15,10 @@ These modules are an introduction to Object Oriented Programming. This will be t
 ### Allowed/Forbidden
 -	You are allowed to use almost everything from the standard library. Thus, instead of sticking to what you already know, it would be smart to use as much as possible the C++-ish versions of the C functions you are used to.
 -	However, you can’t use any other external library. It means C++11 (and derived forms) and *Boost* ibraries are forbidden. The following functions are forbidden too: *printf()*, *alloc()* and *free()*.
--	Note that unless explicitly stated otherwise, the using namespace <ns_name> and friend keywords are forbidden. 
+-	Note that unless explicitly stated otherwise, the using namespace <ns_name> and friend keywords are forbidden.
+-	**You are allowed to use the STL in Module 08 only**. That means: no **Containers** (vector/list/map/and so forth) and no **Algorithms** (anything that requires to include the <algorithm> header) until then.
+
+### A few design requirements
+-	Memory leakage occurs in C++ too. When you allocate memory (by using the *new* keyword), you must avoid **memory leaks**.
+-	From Module 02 to Module 08, your classes must be designed in the **Orthodox Canonical Form**, except when explicitely stated otherwise.
+-	You should be able to use each of your headers independently from others. Thus, they must include all the dependencies they need. However, you must avoid the problem of double inclusion by adding **include guards**.

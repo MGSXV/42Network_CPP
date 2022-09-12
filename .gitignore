@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+# costum
+*.json
+Module_00/ex00/megaphone

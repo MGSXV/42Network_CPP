@@ -6,7 +6,7 @@
 #    By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/08 03:10:15 by sel-kham          #+#    #+#              #
-#    Updated: 2022/09/12 21:18:56 by sel-kham         ###   ########.fr        #
+#    Updated: 2022/09/20 19:36:48 by sel-kham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ CPP := c++
 
 # Flags
 CFLAGS := -Wall -Wextra -Werror
+C98 := -std=c++98
 
 # Base variables
 NAME := megaphone

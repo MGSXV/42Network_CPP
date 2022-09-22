@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 16:30:33 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/09/22 20:05:54 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/09/22 20:11:30 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,29 @@ std::string	Contact::getphoneNumber() const
 std::string	Contact::getSecret() const
 {
 	return (this->Secret);
+}
+
+void	Contact::setFirstName(std::string firstName)
+{
+	this->FirstName = firstName;
+}
+
+void	Contact::setLastName(std::string lastName)
+{
+	this->LastName = lastName;
+}
+
+void	Contact::setNickame(std::string nickname)
+{
+	this->Nickname = nickname;
+}
+
+void	Contact::setPhoneNumber(std::string phoneNumber)
+{
+	this->PhoneNumber = phoneNumber;
+}
+
+void	Contact::setSecret(std::string secret)
+{
+	this->Secret = secret;
 }

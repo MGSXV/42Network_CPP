@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 20:41:32 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/09/21 17:52:52 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/09/22 23:29:23 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ class	Contact
 		std::string	getSecret(void) const;
 		void		setFirstName(std::string firstName);
 		void		setLastName(std::string lastName);
-		void		setNickame(std::string nickname);
+		void		setNickame(std::string phoneNumber);
 		void		setPhoneNumber(std::string nickname);
-		void		setSecret(std::string nickname);
+		void		setSecret(std::string secret);
 		// Constructors
 		Contact& operator=(const Contact&contact);
 	private:

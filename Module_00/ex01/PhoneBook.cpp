@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 20:41:38 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/09/21 17:57:13 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/09/22 20:14:00 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,5 @@ void	PhoneBook::setContact(const Contact &contact)
 	}
 	this->Contacts[this->ContactsNum] = contact;
 	this->ContactsNum++;
+	std::cout << "New contact was created!" << std::endl;
 }

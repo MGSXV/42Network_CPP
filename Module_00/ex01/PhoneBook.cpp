@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 20:41:38 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/09/23 01:38:43 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/09/23 02:03:20 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,6 @@ void	PhoneBook::displayContacts(void)
 	int	i;
 
 	i = -1;
-	if (!this->ContactsNum)
-	{
-		std::cout << "There are no contacts to display!" << std::endl;
-		return ;
-	}
 	std::cout << "|Index     |First name|Last name |Nickname  |" << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
 	while (++i < this->ContactsNum)
@@ -80,4 +75,14 @@ void	PhoneBook::displayContacts(void)
 		std::cout << this->formatDisplay(this->Contacts[i].getNickname()) << "|";
 		std::cout << std::endl;
 	}
+	std::cout << "---------------------------------------------" << std::endl;
+}
+
+void	PhoneBook::displayContact(int index)
+{
+	std::cout << "First Name   :" << this->Contacts[index].getFirstName() << std::endl;
+	std::cout << "Last Name    :" << this->Contacts[index].getLastName() << std::endl;
+	std::cout << "Nickname     :" << this->Contacts[index].getNickname() << std::endl;
+	std::cout << "Phone Number :" << this->Contacts[index].getphoneNumber() << std::endl;
+	std::cout << "Secret       :" << this->Contacts[index].getSecret() << std::endl;
 }

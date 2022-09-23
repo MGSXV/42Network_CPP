@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 20:56:27 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/09/23 01:34:33 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/09/23 02:01:33 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,34 @@ void	addNewContact(Contact &contact)
 	contact.setSecret(userInput);
 }
 
+int	getIndex(PhoneBook &book)
+{
+	std::string	line;
+	int			i;
+
+	do
+	{
+		std::cout << "Li bghit: ";
+		std::getline(std::cin, line);
+		try
+		{
+			i = std::stoi(line);
+		}
+		catch(const std::exception& e)
+		{
+			std::cout << "Please specify a valid number!" << std::endl;
+			continue ;
+		}
+		if (i < 1 || i > book.getContactNum())
+		{
+			std::cout << "Please specify a valid number!" << std::endl;
+			i = -1;
+		}
+	} while (i < 1 || i > book.getContactNum());
+	
+	return (i - 1);
+}
+
 int	main(void)
 {
 	int			choice;
@@ -113,7 +141,15 @@ int	main(void)
 			book.setContact(contact);
 		}
 		else if (choice == 2)
+		{
+			if (!book.getContactNum())
+			{
+				std::cout << "There are no contacts to display!" << std::endl;
+				continue ;
+			}
 			book.displayContacts();
+			book.displayContact(getIndex(book));
+		}
 		std::cout << "Chi haja akhra? (y/n): ";
 		std::getline(std::cin, cmd);
 		str_tolower(&cmd);

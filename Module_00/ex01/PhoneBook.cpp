@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 20:41:38 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/09/23 02:03:20 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/09/23 15:28:26 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,13 @@ Contact PhoneBook::getContact(int index) const
 
 void	PhoneBook::setContact(const Contact &contact)
 {
-	this->Contacts[this->ContactsNum] = contact;
-	this->setContactNum(this->ContactsNum + 1);
+	static int	index;
+
+	if (index >= 8)
+		index = 0;
+	this->Contacts[index++] = contact;
+	if (this->getContactNum() < 8)
+		this->setContactNum(this->getContactNum() + 1);
 	std::cout << "New contact was created!" << std::endl;
 }
 

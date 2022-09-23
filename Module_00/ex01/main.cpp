@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 20:56:27 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/09/23 02:01:33 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/09/23 15:14:36 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,11 +132,6 @@ int	main(void)
 		}
 		if (choice == 1)
 		{
-			if (book.getContactNum() >= 8)
-			{
-				std::cout << "This Phone book is full!" << std::endl;
-				continue ;
-			}
 			addNewContact(contact);
 			book.setContact(contact);
 		}

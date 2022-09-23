@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 20:56:27 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/09/22 23:28:39 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/09/23 01:34:33 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	addNewContact(Contact &contact)
 	userInput = inputHandler("last name");
 	contact.setLastName(userInput);
 	userInput = inputHandler("nickname");
-	contact.setNickame(userInput);
+	contact.setNickname(userInput);
 	userInput = inputHandler("phone number");
 	contact.setPhoneNumber(userInput);
 	userInput = inputHandler("secret");
@@ -104,11 +104,16 @@ int	main(void)
 		}
 		if (choice == 1)
 		{
+			if (book.getContactNum() >= 8)
+			{
+				std::cout << "This Phone book is full!" << std::endl;
+				continue ;
+			}
 			addNewContact(contact);
 			book.setContact(contact);
 		}
 		else if (choice == 2)
-			std::cout << "Choice: " << choice << std::endl;
+			book.displayContacts();
 		std::cout << "Chi haja akhra? (y/n): ";
 		std::getline(std::cin, cmd);
 		str_tolower(&cmd);

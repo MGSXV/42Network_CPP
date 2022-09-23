@@ -35,3 +35,4 @@
 *.json
 Module_00/ex00/megaphone
 Module_00/ex01/phone_book
+*.log

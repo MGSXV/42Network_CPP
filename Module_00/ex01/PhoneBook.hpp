@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 20:41:49 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/09/21 17:49:49 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/09/23 01:32:06 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,12 @@
 class	PhoneBook
 {
 	public:
-		Contact	getContact(int index) const;
-		void	setContact(const Contact &contact);
+		Contact		getContact(int index) const;
+		void		setContact(const Contact &contact);
+		int			getContactNum(void) const;
+		void		setContactNum(int num);
+		void		displayContacts(void);
+		std::string	formatDisplay(std::string str);
 		PhoneBook(void);
 	private:
 		Contact	Contacts[8];

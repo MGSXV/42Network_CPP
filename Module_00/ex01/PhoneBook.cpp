@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 20:41:38 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/09/23 15:28:26 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/09/24 15:21:41 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,23 +47,6 @@ void	PhoneBook::setContact(const Contact &contact)
 	std::cout << "New contact was created!" << std::endl;
 }
 
-std::string PhoneBook::formatDisplay(std::string str)
-{
-	std::string	width;
-	int			i;
-
-	if (str.length() <= 10)
-	{
-		i = -1;
-		width = "";
-		while (++i < (int) (10 - str.length()))
-			width += " ";
-		return (str + width);
-	}
-	str.resize(9);
-	return (str + ".");
-}
-
 void	PhoneBook::displayContacts(void)
 {
 	int	i;
@@ -74,10 +57,19 @@ void	PhoneBook::displayContacts(void)
 	while (++i < this->ContactsNum)
 	{
 		std::cout << "|";
-		std::cout << i + 1 << std::setw(10) << "|";
-		std::cout << this->formatDisplay(this->Contacts[i].getFirstName()) << "|";
-		std::cout << this->formatDisplay(this->Contacts[i].getLastName()) << "|";
-		std::cout << this->formatDisplay(this->Contacts[i].getNickname()) << "|";
+		std::cout << std::right << std::setw(10) << i + 1 << "|";
+		if (this->Contacts[i].getFirstName().length() > 10)
+			std::cout << std::right << std::setw(10) << this->Contacts[i].getFirstName().substr(0, 9) + "." << "|";
+		else
+			std::cout << std::right << std::setw(10) << this->Contacts[i].getFirstName() << "|";
+		if (this->Contacts[i].getLastName().length() > 10)
+			std::cout << std::right << std::setw(10) << this->Contacts[i].getLastName().substr(0, 9) + "." << "|";
+		else
+			std::cout << std::right << std::setw(10) << this->Contacts[i].getLastName() << "|";
+		if (this->Contacts[i].getNickname().length() > 10)
+			std::cout << std::right << std::setw(10) << this->Contacts[i].getNickname().substr(0, 9) + "." << "|";
+		else
+			std::cout << std::right << std::setw(10) << this->Contacts[i].getNickname() << "|";
 		std::cout << std::endl;
 	}
 	std::cout << "---------------------------------------------" << std::endl;

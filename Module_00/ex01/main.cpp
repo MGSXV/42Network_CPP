@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 20:56:27 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/09/23 15:14:36 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/09/24 14:57:52 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,25 +31,13 @@ int	command_handler(std::string cmd)
 
 	choice = 0;
 	if (cmd == "add")
-	{
-		fflush(stdin);
 		return (1);
-	}
 	else if (cmd == "search")
-	{
-		fflush(stdin);
 		return (2);
-	}
 	else if (cmd == "exit")
-	{
-		fflush(stdin);
 		return (0);
-	}
 	else
-	{
-		fflush(stdin);
 		return (-1);
-	}
 }
 
 std::string	inputHandler(const std::string field)
@@ -60,7 +48,8 @@ std::string	inputHandler(const std::string field)
 	do
 	{
 		std::cout << "Please enter contact's " << field << ": ";
-		std::getline(std::cin, userInput);
+		if (std::getline(std::cin, userInput).eof())
+			exit(1);
 		if (userInput == "")
 			std::cout << "Contact's " << field << " cannot be empty!" << std::endl;
 	} while (userInput == "");
@@ -91,7 +80,8 @@ int	getIndex(PhoneBook &book)
 	do
 	{
 		std::cout << "Li bghit: ";
-		std::getline(std::cin, line);
+		if (std::getline(std::cin, line).eof())
+			exit(1);
 		try
 		{
 			i = std::stoi(line);
@@ -122,7 +112,8 @@ int	main(void)
 	do
 	{
 		std::cout << "Diri chi 7araka (Add - Search - Exit): ";
-		std::getline(std::cin, cmd);
+		if (std::getline(std::cin, cmd).eof())
+			exit(1);
 		str_tolower(&cmd);
 		choice = command_handler(cmd);
 		if (choice == -1)
@@ -145,8 +136,11 @@ int	main(void)
 			book.displayContacts();
 			book.displayContact(getIndex(book));
 		}
-		std::cout << "Chi haja akhra? (y/n): ";
-		std::getline(std::cin, cmd);
+		if (!choice)
+			break ;
+		std::cout << "Chi haja akhra? `n` to exit!: ";
+		if (std::getline(std::cin, cmd).eof())
+			exit(1);
 		str_tolower(&cmd);
 		if (cmd == "n")
 		{

@@ -6,11 +6,17 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 15:57:25 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/09/24 16:35:45 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/09/24 19:15:20 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+// Constructors and destructors
+Zombie::~Zombie(void)
+{
+	std::cout << this->getName() << " is dead but no longer walking!" << std::endl;
+}
 
 // Getters and setters for the Zombie class
 str_t	Zombie::getName(void) const

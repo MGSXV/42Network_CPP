@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 15:57:36 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/09/24 16:33:55 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/09/24 19:05:52 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ typedef std::string	str_t;
 class	Zombie
 {
 	public:
+		// Constructors and destructors
+		~Zombie(void);
 		// Getters and setters
 		str_t	getName(void) const;
 		void	setName(str_t name);
@@ -30,5 +32,8 @@ class	Zombie
 	private:
 		str_t	Name;
 };
+
+Zombie	*newZombie(str_t name);
+void	randomChump( std::string name );
 
 #endif

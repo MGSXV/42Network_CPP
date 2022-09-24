@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 15:57:09 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/09/24 16:43:43 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/09/24 19:19:26 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,14 @@
 
 int	main(void)
 {
-	Zombie	zombie;
+	Zombie	zombie1;
+	Zombie	*zombie2;
 
-	zombie.setName("Flou7");
-	zombie.announce();
+	zombie1.setName("Creeper");
+	zombie2 = newZombie("7ach7ouch");
+	zombie1.announce();
+	zombie2->announce();
+	randomChump("Captain Chris Redfield ");
+	delete(zombie2);
+	return (0);
 }

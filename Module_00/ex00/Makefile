@@ -6,7 +6,7 @@
 #    By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/08 03:10:15 by sel-kham          #+#    #+#              #
-#    Updated: 2022/09/20 19:36:48 by sel-kham         ###   ########.fr        #
+#    Updated: 2022/09/24 02:20:19 by sel-kham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,14 +24,13 @@ REMOVE := rm -rf
 
 # Source
 SRC := $(addsuffix .cpp, $(FNAME))
-HEADER := $(addsuffix .hpp, $(FNAME))
 
 # Base code for the Makefile
 .PHONY: all clean fclean re
 
 all: $(NAME)
 
-$(NAME): $(SRC) $(HEADER)
+$(NAME): $(SRC)
 	$(CPP) $(CFLAGS) $(SRC) -o $(NAME)
 
 clean:

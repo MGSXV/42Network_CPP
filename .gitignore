@@ -33,8 +33,9 @@
 
 # costum
 *.json
+*.log
+*.dSYM
 Module_00/ex00/megaphone
 Module_00/ex01/phone_book
 Module_00/ex02/bank_logs
-*.log
-*.dSYM
+Module_01/ex00/walkingdead

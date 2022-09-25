@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 00:22:28 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/09/25 14:31:44 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/09/25 17:02:06 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ class	HumanB
 		// Getters and setters
 		str_t	getName(void) const;
 		Weapon	getWeapon(void) const;
-		void	setWeapon(Weapon type);
+		void	setWeapon(Weapon &type);
 		void	setName(str_t name);
 		// class methods
 		void	attack(void);
 	private:
 		str_t	name;
-		Weapon	weaponType;
+		Weapon	*weaponType;
 };
 
 #endif

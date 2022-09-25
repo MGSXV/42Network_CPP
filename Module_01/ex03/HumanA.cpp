@@ -6,16 +6,16 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 00:22:03 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/09/25 14:31:07 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/09/25 16:59:05 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(str_t name, Weapon weapon)
+HumanA::HumanA(str_t name, Weapon &weapon) : weaponType(weapon)
 {
 	this->setName(name);
-	this->setWeapon(weapon);
+	// this->setWeapon(weapon);
 }
 
 HumanA::~HumanA(void) {}
@@ -35,7 +35,7 @@ void	HumanA::setName(str_t name)
 	this->name = name;
 }
 
-void	HumanA::setWeapon(Weapon type)
+void	HumanA::setWeapon(Weapon &type)
 {
 	this->weaponType = type;
 }

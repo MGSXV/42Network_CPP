@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 00:22:21 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/09/25 14:34:49 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/09/25 17:04:15 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ HumanB::HumanB(str_t name)
 	this->setName(name);
 }
 
-HumanB::HumanB(void){}
+HumanB::HumanB(void) {}
 
 HumanB::~HumanB(void) {}
 
@@ -29,7 +29,7 @@ str_t	HumanB::getName(void) const
 
 Weapon	HumanB::getWeapon(void) const
 {
-	return (this->weaponType);
+	return (*this->weaponType);
 }
 
 void	HumanB::setName(str_t name)
@@ -37,9 +37,9 @@ void	HumanB::setName(str_t name)
 	this->name = name;
 }
 
-void	HumanB::setWeapon(Weapon type)
+void	HumanB::setWeapon(Weapon &type)
 {
-	this->weaponType = type;
+	this->weaponType = &type;
 }
 
 void	HumanB::attack(void)

@@ -6,34 +6,42 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 00:22:03 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/09/25 02:37:32 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/09/25 14:31:07 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(const str_t name, const Weapon weapon)
+HumanA::HumanA(str_t name, Weapon weapon)
 {
 	this->setName(name);
-	this->setWeaponType(weapon);
+	this->setWeapon(weapon);
 }
+
+HumanA::~HumanA(void) {}
 
 str_t	HumanA::getName(void) const
 {
 	return (this->name);
 }
 
-Weapon	HumanA::getWeaponType(void) const
+Weapon	HumanA::getWeapon(void) const
 {
 	return (this->weaponType);
 }
 
-void	HumanA::setName(const str_t name)
+void	HumanA::setName(str_t name)
 {
 	this->name = name;
 }
 
-void	HumanA::setWeaponType(const Weapon type)
+void	HumanA::setWeapon(Weapon type)
 {
 	this->weaponType = type;
 }
+
+void	HumanA::attack(void)
+{
+	std::cout <<  this->getName() << "  attacks with their " << this->getWeapon().getType() << std::endl;
+}
+

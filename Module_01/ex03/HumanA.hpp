@@ -6,11 +6,11 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 00:22:10 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/09/25 00:40:47 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/09/25 14:30:56 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma ocnce
+#pragma once
 #ifndef __HUMANA_HPP__
 # define __HUMANA_HPP__
 
@@ -24,13 +24,13 @@ class HumanA
 	public:
 		// Constructors and destructors
 		HumanA();
-		HumanA(const str_t name, const Weapon weapon);
+		HumanA(str_t name, Weapon weapon);
 		~HumanA();
 		// Getters and setters
 		str_t	getName(void) const;
-		Weapon	getWeaponType(void) const;
-		void	setWeaponType(const Weapon type);
-		void	setName(const str_t name);
+		Weapon	getWeapon(void) const;
+		void	setWeapon(Weapon type);
+		void	setName(str_t name);
 		// class methods
 		void	attack(void);
 	private:

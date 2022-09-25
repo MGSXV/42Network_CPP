@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 00:21:39 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/09/25 02:40:34 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/09/25 02:42:49 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class	Weapon
 {
 	public:
 		// Constructors and destructors
+		Weapon(void);
 		Weapon(const str_t type);
 		// Class methods
 		str_t	getType(void) const;

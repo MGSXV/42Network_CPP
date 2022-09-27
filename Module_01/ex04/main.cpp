@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 17:47:47 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/09/27 01:36:13 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/09/27 01:46:15 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	main(int argc, char **argv)
 	std::string		content;
 	std::string		outName;
 
-	if (argc != 4)
+	if (argc != 4 || !argv[2][0] || !argv[3][0])
 	{
 		std::cout << "Input error!" << std::endl;
 		return (1);
@@ -72,7 +72,7 @@ int	main(int argc, char **argv)
 	{
 		std::getline(srcFile, content);
 		replace_string(content, argv[2], argv[3]);
-		dstFile << content;
+		dstFile << content << std::endl;
 	}
 	srcFile.close();
 	dstFile.close();

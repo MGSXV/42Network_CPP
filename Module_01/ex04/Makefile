@@ -6,7 +6,7 @@
 #    By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/25 17:08:16 by sel-kham          #+#    #+#              #
-#    Updated: 2022/09/27 01:19:32 by sel-kham         ###   ########.fr        #
+#    Updated: 2022/09/27 02:45:24 by sel-kham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS := -Wall -Wextra -Werror
 C98 := -std=c++98
 
 # Base variables
-NAME := clash
+NAME := replace
 MAIN := main.cpp
 FNAME := Weapon HumanA HumanB
 REMOVE := rm -rf

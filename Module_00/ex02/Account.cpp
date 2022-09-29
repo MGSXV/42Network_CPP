@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 02:24:53 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/09/23 21:37:32 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/09/29 16:15:13 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,10 +113,12 @@ void	Account::displayStatus(void) const
 
 void	Account::_displayTimestamp(void)
 {
-	char		buff[100];
+	char		buff[18];
 	time_t		time_as_num;
-	struct tm	*time;
+	struct tm	*time_c;
 
-	time = localtime(&time_as_num);
-	std::cout << strftime(buff, 100, "%G%m%d_%H%M%S", time);
+	time(&time_as_num);
+	time_c = localtime(&time_as_num);
+	strftime(buff, 18, "[%G%m%d_%H%M%S]", time_c);
+	std::cout << buff;
 }

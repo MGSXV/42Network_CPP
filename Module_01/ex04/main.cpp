@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 17:47:47 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/09/27 01:46:15 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/09/30 19:51:30 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	main(int argc, char **argv)
 	}
 	outName = argv[1];
 	outName += ".replace";
-	dstFile.open(outName.c_str(), (std::ios_base::app & std::ios_base::out) | std::ios_base::trunc);
+	dstFile.open(outName.c_str(), std::ios_base::app | std::ios_base::out | std::ios_base::in | std::ios_base::trunc );
 	if (!dstFile)
 	{
 		std::cout << "Error opening destination file!" << std::endl;

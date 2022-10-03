@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 15:25:46 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/01 15:26:25 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/03 18:39:28 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # define __FIXED_HPP__
 
 # include <iostream>
+# include <cmath>
 
 class	Fixed
 {
@@ -22,15 +23,22 @@ class	Fixed
 		// Constructors and destructors
 		Fixed();
 		Fixed(const Fixed &other);
+		Fixed(const int num);
+		Fixed(const float num);
 		~Fixed();
 		// Copy assignment operator overload
-		Fixed &operator=(const Fixed &other);
+		Fixed			&operator=(const Fixed &other);
 		// Getters and setters
 		void	setRawBit(int const raw);
 		int		getRawBit(void) const;
+		// Member functions
+		float	toFloat(void) const;
+		int		toInt(void) const;
 	private:
 		int					raw;
 		static const int	fractions;
 };
+
+std::ostream	&operator<<(std::ostream &obj, const Fixed& fixed);
 
 #endif

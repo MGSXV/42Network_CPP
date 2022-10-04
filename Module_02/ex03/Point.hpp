@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 21:33:45 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/04 22:18:15 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/05 00:07:16 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ class Point
 		~Point();
 		// Copy assignment operator
 		Point	&operator=(const Point &other);
+		// Comparison operator overload
+		bool	operator==(const Point &other) const;
 		// Getters and setters
 		void	setX(const Fixed &x);
 		void	setY(const Fixed &y);

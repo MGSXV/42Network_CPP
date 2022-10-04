@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 21:33:38 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/04 22:18:27 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/05 00:07:20 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,11 @@ Point	&Point::operator=(const Point &other)
 	return (*this);
 }
 
+// compare operator overload
+bool	Point::operator==(const Point &other) const
+{
+	return (this->getX() == other.getX() && this->getY() == other.getY());
+}
 // Getters and setters
 void	Point::setX(const Fixed &x)
 {

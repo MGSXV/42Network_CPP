@@ -6,7 +6,7 @@
 #    By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/04 21:32:50 by sel-kham          #+#    #+#              #
-#    Updated: 2022/10/04 21:36:33 by sel-kham         ###   ########.fr        #
+#    Updated: 2022/10/04 22:19:25 by sel-kham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ CFLAGS := -Wall -Wextra -Werror
 C98 := -std=c++98
 
 # Base variables
-NAME := fixed
+NAME := bsp
 MAIN := main.cpp
 FNAME := Fixed Point
 REMOVE := rm -rf

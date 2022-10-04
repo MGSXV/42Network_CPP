@@ -6,7 +6,34 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 21:33:45 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/04 21:33:46 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/04 22:18:15 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+#ifndef __POINT_HPP__
+# define __POINT_HPP__
+
+# include "Fixed.hpp"
+
+class Point
+{
+	private:
+		Fixed	x;
+		Fixed	y;
+	public:
+		// Constructors and destructors
+		Point();
+		Point(const Point &other);
+		Point(const Fixed x, const Fixed y);
+		~Point();
+		// Copy assignment operator
+		Point	&operator=(const Point &other);
+		// Getters and setters
+		void	setX(const Fixed &x);
+		void	setY(const Fixed &y);
+		Fixed	getX(void) const;
+		Fixed	getY(void) const;
+};
+
+#endif

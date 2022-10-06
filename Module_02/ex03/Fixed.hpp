@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 21:33:20 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/04 21:38:20 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/05 23:07:03 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ class	Fixed
 		Fixed	operator--(void);
 		Fixed	operator++(int);
 		Fixed	operator--(int);
-		Fixed	operator+(Fixed &other);
-		Fixed	operator-(Fixed &other);
-		Fixed	operator/(Fixed &other);
+		Fixed	operator+(const Fixed &other);
+		Fixed	operator-(const Fixed &other);
+		Fixed	operator/(const Fixed &other);
 		Fixed	operator*(const Fixed &other);
 		// // Copy assignment operator
 		Fixed	&operator=(const Fixed &other);
@@ -51,6 +51,7 @@ class	Fixed
 		// Member functions
 		float			toFloat(void) const;
 		int				toInt(void) const;
+		void			abs(void);
 		static Fixed	&min(Fixed &p1, Fixed &p2);
 		static const Fixed	&min(const Fixed &p1, const Fixed &p2);
 		static Fixed	&max(Fixed &p1, Fixed &p2);

@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 21:33:24 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/04 21:38:36 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/06 16:38:44 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,13 +110,13 @@ Fixed	Fixed::operator--(int)
 	return (tmp);
 }
 
-Fixed	Fixed::operator+(Fixed &other)
+Fixed	Fixed::operator+(const Fixed &other)
 {
 	Fixed	tmp(this->toFloat() + other.toFloat());
 	return (tmp);
 }
 
-Fixed	Fixed::operator-(Fixed &other)
+Fixed	Fixed::operator-(const Fixed &other)
 {
 	Fixed	tmp(this->toFloat() - other.toFloat());
 	return (tmp);
@@ -128,7 +128,7 @@ Fixed	Fixed::operator*(const Fixed &other)
 	return (tmp);
 }
 
-Fixed	Fixed::operator/(Fixed &other)
+Fixed	Fixed::operator/(const Fixed &other)
 {
 	Fixed	tmp(this->toFloat() / other.toFloat());
 	return (tmp);
@@ -174,4 +174,10 @@ const Fixed	&Fixed::max(const Fixed &p1, const Fixed &p2)
 {
 	const Fixed	&tmp = (p1 > p2) ? p1 : p2;
 	return (tmp);
+}
+
+void	Fixed::abs(void)
+{
+	if (*this < Fixed(0.0f))
+		*this = *this * Fixed(-1.f);
 }

@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 21:33:38 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/05 00:07:20 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/05 05:19:13 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ Point::Point(const Point &point)
 {
 	*this = point;
 }
+
+Point::~Point(void) {};
 
 // Copy assignment operator
 Point	&Point::operator=(const Point &other)

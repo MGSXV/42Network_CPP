@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 21:33:45 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/05 00:07:16 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/05 05:21:57 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,7 @@ class Point
 		Fixed	getX(void) const;
 		Fixed	getY(void) const;
 };
+
+bool	bsp(const Point a, const Point b, const Point c, const Point point);
 
 #endif

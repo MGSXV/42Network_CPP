@@ -6,7 +6,7 @@
 #    By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 20:19:20 by sel-kham          #+#    #+#              #
-#    Updated: 2022/10/07 20:22:46 by sel-kham         ###   ########.fr        #
+#    Updated: 2022/10/07 20:24:25 by sel-kham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ CFLAGS := -Wall -Wextra -Werror
 C98 := -std=c++98
 
 # Base variables
-NAME := claptap
+NAME := claptrap
 MAIN := main.cpp
 FNAME := ClapTrap
 REMOVE := rm -rf

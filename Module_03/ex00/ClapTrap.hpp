@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 20:19:50 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/07 20:35:43 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/08 00:02:58 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,17 @@ class ClapTrap
 	public:
 		// Constructors and destructors
 		ClapTrap(void);
+		ClapTrap(str_t &name);
+		ClapTrap(const str_t &name);
 		~ClapTrap();
 		ClapTrap(const ClapTrap &other);
 		// Assignment operator overload
 		ClapTrap&	operator=(const ClapTrap &other);
 		// Getters and setters
-		str_t	getName(void);
-		int		getHitpoints(void);
-		int		getEnergyPoints(void);
-		int		getAttackDamage(void);
+		str_t	getName(void) const;
+		int		getHitpoints(void) const;
+		int		getEnergyPoints(void) const;
+		int		getAttackDamage(void) const;
 		void	setName(str_t name);
 		void	setHitpoints(int hitPoints);
 		void	setEnergyPoints(int energyPoints);

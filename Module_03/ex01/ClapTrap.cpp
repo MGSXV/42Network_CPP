@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 20:19:45 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/08 00:54:22 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/08 16:47:11 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@
 ClapTrap::ClapTrap(void)
 {
 	this->setName("Anonymous");
-	this->setHitpoints(10);
-	this->setEnergyPoints(10);
-	this->setAttackDamage(0);
+	this->setHitpoints(100);
+	this->setEnergyPoints(50);
+	this->setAttackDamage(20);
 	std::cout << "Hello World! this is the default constructor :)" << std::endl;
 }
 
 ClapTrap::ClapTrap(str_t &name)
 {
 	this->setName(name);
-	this->setHitpoints(10);
-	this->setEnergyPoints(10);
-	this->setAttackDamage(0);
+	this->setHitpoints(100);
+	this->setEnergyPoints(50);
+	this->setAttackDamage(20);
 	std::cout << "Hello World! this is the initialize constructor :)" << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 20:19:45 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/08 00:54:22 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/09 20:32:11 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,7 @@ void    ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->getEnergyPoints() > 0 && this->getHitpoints() > 0)
 	{
-		this->setEnergyPoints(this->getEnergyPoints() - 1);	
+		this->setHitpoints(this->getHitpoints() + amount);
 		std::cout << "ClapTrap " << this->getName() << " repaired itself with " << amount << " hit points!" << std::endl;
 	}
 }

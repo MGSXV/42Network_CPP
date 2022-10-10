@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 20:19:50 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/08 00:02:58 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/10 21:11:58 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ class ClapTrap
 	public:
 		// Constructors and destructors
 		ClapTrap(void);
-		ClapTrap(str_t &name);
 		ClapTrap(const str_t &name);
 		~ClapTrap();
 		ClapTrap(const ClapTrap &other);

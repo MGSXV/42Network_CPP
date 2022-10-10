@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 01:12:39 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/10 03:19:27 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/10 21:06:44 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,6 @@ typedef std::string	str_t;
 ScavTrap::ScavTrap(void)
 {
 	std::cout << "This is the ScavTrap default constructor" << std::endl;
-}
-
-ScavTrap::ScavTrap(str_t &name)
-{
-	this->setName(name);
-	std::cout << "Hello World! this is the initialize constructor for ScavTrap :)" << std::endl;
 }
 
 ScavTrap::ScavTrap(str_t const &name)

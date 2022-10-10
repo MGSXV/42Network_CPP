@@ -6,7 +6,7 @@
 #    By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/08 00:55:51 by sel-kham          #+#    #+#              #
-#    Updated: 2022/10/10 22:13:11 by sel-kham         ###   ########.fr        #
+#    Updated: 2022/10/10 22:14:03 by sel-kham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ CFLAGS := -Wall -Wextra -Werror
 C98 := -std=c++98
 
 # Base variables
-NAME := fragtrap
+NAME := diamondtrap
 MAIN := main.cpp
 FNAME := ClapTrap ScavTrap FragTrap DiamondTrap
 REMOVE := rm -rf

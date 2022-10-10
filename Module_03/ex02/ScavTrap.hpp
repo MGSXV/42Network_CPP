@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 01:12:46 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/10 03:15:36 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/10 21:13:37 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ class ScavTrap : public ClapTrap
 		// Constructors and destructors
 		ScavTrap();
         ~ScavTrap();
-		ScavTrap(str_t &name);
 		ScavTrap(const str_t &name);
 		ScavTrap(const ScavTrap& trap);
 		// Assignment operator overload

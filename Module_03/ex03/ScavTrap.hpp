@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 01:12:46 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/10 21:13:37 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/11 19:37:43 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 typedef std::string	str_t;
 
-class ScavTrap : public ClapTrap
+class ScavTrap : public virtual ClapTrap
 {
 	private:
 	public:

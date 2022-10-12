@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 05:19:23 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/12 05:20:13 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/12 18:45:05 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,15 @@ typedef std::string	str_t;
 
 class Dog : public Animal
 {
-	private:
-	protected:
 	public:
+		// Constructors and destructors
+		Dog (void);
+		~Dog(void);
+		Dog(const Dog &other);
+		// Assignment operator
+		Dog &operator=(const Dog &other);
+        // Member functions
+		void	makeSound(void) const;
 };
 
 #endif

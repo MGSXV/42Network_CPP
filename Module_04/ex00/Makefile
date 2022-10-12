@@ -6,7 +6,7 @@
 #    By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 05:14:35 by sel-kham          #+#    #+#              #
-#    Updated: 2022/10/12 05:18:45 by sel-kham         ###   ########.fr        #
+#    Updated: 2022/10/12 05:33:53 by sel-kham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ C98 := -std=c++98
 # Base variables
 NAME := animal
 MAIN := main.cpp
-FNAME := Animal
+FNAME := Animal Cat Dog
 REMOVE := rm -rf
 
 # Headers

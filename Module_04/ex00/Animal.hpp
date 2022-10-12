@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 05:15:47 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/12 05:18:08 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/12 05:21:11 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Animal
 {
 	private:
 	protected:
-	str_t	type;
+		str_t	type;
 	public:
 };
 

@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 05:15:41 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/12 05:31:26 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/12 05:47:40 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ Animal::~Animal(void)
 
 Animal::Animal(const Animal& animal)
 {
+	std::cout << "This is the copy constructor from Animal!" << std::endl;
 	*this = animal;
 }
 

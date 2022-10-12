@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 05:15:47 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/12 18:37:12 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/12 20:28:48 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Animal
 	public:
 		// Constructors and destructors
 		Animal(void);
-        ~Animal(void);
+        virtual ~Animal(void);
 		Animal(const Animal& animal);
 		// Assignment operator overload
 		Animal& operator=(const Animal& animal);

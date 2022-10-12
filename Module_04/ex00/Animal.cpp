@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 05:15:41 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/12 18:35:24 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/12 20:31:43 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // Constructors and destructors
 Animal::Animal(void)
 {
-	this->setType("Nothing yet!");
+	this->setType("Magical creature");
 	std::cout << "Hello from Animal!" << std::endl;
 }
 

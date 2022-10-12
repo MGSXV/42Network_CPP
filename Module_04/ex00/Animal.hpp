@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 05:15:47 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/12 05:43:19 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/12 18:37:12 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ class Animal
 		// Getters and setters
 		str_t	getType(void) const;
 		void	setType(const str_t& t);
+		// Member functions
+		void virtual	makeSound(void) const;
 };
 
 #endif

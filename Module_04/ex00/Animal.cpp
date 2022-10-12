@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 05:15:41 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/12 05:47:40 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/12 18:35:24 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,21 @@ Animal& Animal::operator=(const Animal& animal)
 {
 	this->setType(animal.getType());
 	return (*this);
+}
+
+// Getters and setters
+str_t	Animal::getType() const
+{
+	return (this->type);
+}
+
+void Animal::setType(const str_t& type)
+{
+	this->type = type;
+}
+
+// Member functions
+void	Animal::makeSound(void) const
+{
+	std::cout << "AAAAAAAaaaaaAAAAAAAaaaaAAaaaaaaAa!!!" << std::endl;
 }

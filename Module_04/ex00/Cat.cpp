@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 05:21:43 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/12 18:46:39 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/13 17:12:25 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,3 @@ void	Cat::makeSound(void) const
 	std::cout << "( o.o )" << std::endl;
 	std::cout << " > ^ <" << std::endl;
 }
-
-
-
-

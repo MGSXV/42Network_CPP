@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:32:14 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/14 02:40:50 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/16 18:36:38 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ void Brain::setIdeas(const std::string *ideas)
 {
 	unsigned long	i;
 
-	i = -1;
-	while (++i < ideas->length())
-		this->ideas[i] = ideas[i];
+	i = 0;
+	while (ideas + i)
+		this->ideas[i] = ideas[i++];
 }
 
 void	Brain::setIdea(const std::string &idea, int index)
@@ -57,8 +57,5 @@ void	Brain::setIdea(const std::string &idea, int index)
 
 std::string*	Brain::getIdeas(void) const
 {
-	std::string*	newIdeas = new std::string[100];
-	
-	newIdeas = this->ideas;
-	return (newIdeas);
+	return (this->ideas);
 }

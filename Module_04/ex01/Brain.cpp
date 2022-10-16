@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:32:14 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/16 21:39:11 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/16 23:01:57 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ Brain::~Brain()
 
 Brain::Brain(const Brain& other)
 {
-	*this = other;
+	if (this->ideas)
+		delete[] this->ideas;
+	this->ideas = new std::string[100];
+	this->setIdeas(other.getIdeas());
 }
 
 // Assignment operator overload

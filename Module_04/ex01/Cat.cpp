@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 05:21:43 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/17 03:05:13 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/17 04:14:05 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ Cat::~Cat(void)
 Cat::Cat(const Cat& other)
 {
 	this->type = other.type;
-	this->brain = other.brain;
+	this->brain = new Brain(*other.brain);
 }
 
 // Assignment operator overload
 Cat& Cat::operator=(const Cat& other)
 {
 	this->type = other.type;
-	this->brain = other.brain;
+	*this->brain = *other.brain;
     return (*this);
 }
 

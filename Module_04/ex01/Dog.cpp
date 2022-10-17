@@ -6,12 +6,13 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 05:19:18 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/17 03:04:25 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/17 04:13:36 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
+// Constructors and destructors
 Dog::Dog(void)
 {
 	this->type = "Dog";
@@ -28,14 +29,14 @@ Dog::~Dog(void)
 Dog::Dog(const Dog& other)
 {
 	this->type = other.type;
-	this->brain = other.brain;
+	this->brain = new Brain(*other.brain);
 }
 
 // Assignment operator overload
 Dog&	Dog::operator=(Dog const& other)
 {
 	this->type = other.type;
-	this->brain = other.brain;
+	*this->brain = *other.brain;
     return (*this);
 }
 

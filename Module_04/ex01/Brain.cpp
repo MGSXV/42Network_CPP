@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:32:14 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/17 02:23:48 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/17 04:11:20 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,12 @@ Brain::~Brain()
 
 Brain::Brain(const Brain& other)
 {
-	if (this->ideas)
-		delete[] this->ideas;
+	// if (this->ideas)
+	// {
+	// 	std::cout << this << std::endl;
+	// 	std::cout << this->ideas << std::endl;
+	// 	delete[] this->ideas;
+	// }
 	this->ideas = new std::string[100];
 	this->setIdeas(other.getIdeas());
 }

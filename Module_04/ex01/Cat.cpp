@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 05:21:43 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/13 17:12:25 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/17 02:00:12 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,27 @@
 Cat::Cat(void)
 {
 	this->type = "Cat";
+	this->brain = new Brain();
 	std::cout << "This is a `Hello` in cats language!" << std::endl;
 }
 
 Cat::~Cat(void)
 {
+	delete this->brain;
 	std::cout << "Goodbye! Also in cats language!" << std::endl;
 }
 
 Cat::Cat(const Cat& other)
 {
-	*this = other;
+	this->type = other.type;
+	this->brain = other.brain;
 }
 
 // Assignment operator overload
 Cat& Cat::operator=(const Cat& other)
 {
 	this->type = other.type;
+	this->brain = other.brain;
     return (*this);
 }
 

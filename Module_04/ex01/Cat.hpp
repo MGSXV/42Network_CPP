@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 05:21:35 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/12 18:37:37 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/16 18:38:30 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,14 @@
 
 # include <iostream>
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 typedef std::string	str_t;
 
 class Cat : public Animal
 {
+	private:
+		Brain *brain;
 	public:
 		// Constructors and destructors
 		Cat(void);

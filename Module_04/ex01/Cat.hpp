@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 05:21:35 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/16 18:38:30 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/17 03:05:33 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ class Cat : public Animal
 		Cat(const Cat& other);
 		// Assignment operator overload
 		Cat& operator=(const Cat& other);
+		//  Getters and setters
+		void	setBrain(Brain *&new_brain);
+		Brain*	getBrain(void) const;
         // Public member functions
 		void	makeSound(void) const;
 };

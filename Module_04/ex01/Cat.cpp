@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 05:21:43 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/17 02:00:12 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/17 03:05:13 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,19 @@ Cat& Cat::operator=(const Cat& other)
 	this->type = other.type;
 	this->brain = other.brain;
     return (*this);
+}
+
+// Getters and setters
+void	Cat::setBrain(Brain *&new_brain)
+{
+	if (this->brain)
+		delete this->brain;
+	this->brain = new_brain;
+}
+
+Brain*    Cat::getBrain(void) const
+{
+	return (this->brain);
 }
 
 // Member functions

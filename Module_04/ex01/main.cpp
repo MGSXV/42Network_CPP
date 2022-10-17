@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 05:14:59 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/13 17:22:52 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/17 05:29:40 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,84 +14,71 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
 
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 
 void	leaks_check(void)
 {
-	system("leaks animal");
+	system("leaks brain");
 }
 
 int    main(void)
 {
-	// atexit(leaks_check);
+	atexit(leaks_check);
 	
-	// * this is the required test
-	// const Animal* griffin = new Animal();
-	// std::cout << "--------------------------------" << std::endl;
-	// const Animal* dog = new Dog();
-	// std::cout << "--------------------------------" << std::endl;
-	// const Animal* cat = new Cat();
-	// std::cout << "--------------------------------" << std::endl;
+	// Animal* griffin = new Animal();
+	// Cat* cat = new Cat();
+	// Dog* dog = new Dog();
+	// Dog* dog3 = new Dog(*dog);
 
-	// std::cout << cat->getType() << " " << std::endl;
-	// cat->makeSound(); //will output the cat sound!
-	// std::cout << std::endl;
-	// std::cout << dog->getType() << " " << std::endl;
-	// dog->makeSound();
-	// std::cout << std::endl;
-	// griffin->makeSound();
+
+	// dog->setType("Bulldog");
+	// Animal* dog2 = new Dog();
+	// *dog2 = *dog;
+	// std::cout << "Griffin's type : " << griffin->getType() << std::endl;
+	// std::cout << "Cat's type : " << cat->getType() << std::endl;
+	// std::cout << "Dog's type : " << dog->getType() << std::endl;
+	// std::cout << "Dog2's type : " << dog2->getType() << std::endl;
+	// dog->setType("Dog");
+	// std::cout << "Dog's type : " << dog->getType() << std::endl;
+	// std::cout << "Dog2's type : " << dog2->getType() << std::endl;
+	// std::cout << "Dog3's type : " << dog3->getType() << std::endl;
 	// delete griffin;
-	// delete dog;
-	// delete cat;
+    // delete cat;
+    // delete dog;
+    // delete dog2;
+    // delete dog3;
 
-	//----------------------------------------------------------------
-	// const Animal*	griffin = new Animal();
-	// const Dog*		dog = new Dog();
-	// const Cat*        cat = new Cat();
 
-	// std::cout << std::endl;
-	// std::cout << cat->getType() << " " << std::endl;
-	// cat->makeSound();
-	// std::cout << std::endl;
-	// std::cout << dog->getType() << " " << std::endl;
-	// dog->makeSound();
-	// std::cout << std::endl;
-	// std::cout << griffin->getType() << " " << std::endl;
-	// griffin->makeSound();
+
+	// Animal* griffin = new Animal();
+	// Animal* cat = new Cat();
+	// Animal* dog = new Dog();
+	// Dog* dog1 = new Dog();
+
+	// std::cout << sizeof(*griffin) << std::endl;
+	// std::cout << sizeof(*cat) << std::endl;
+	// std::cout << sizeof(*dog) << std::endl;
+	// std::cout << sizeof(*dog1) << std::endl;
+
 	// delete griffin;
-	// delete dog;
 	// delete cat;
-
-	//----------------------------------------------------------------
-	// Animal	griffin = Animal();
-	// std::cout << "--------------------------------" << std::endl;
-	// Animal	cat = Cat();
-	// std::cout << "--------------------------------" << std::endl;
-	// Animal	dog = Dog();
-	// std::cout << "--------------------------------" << std::endl;
-
-	// std::cout << std::endl;
-	// std::cout << cat.getType() << " " << std::endl;
-	// cat.makeSound();
-	// std::cout << std::endl;
-	// std::cout << dog.getType() << " " << std::endl;
-	// dog.makeSound();
-	// std::cout << std::endl;
-	// std::cout << griffin.getType() << " " << std::endl;
-	// griffin.makeSound();
+	// delete dog;
+	// delete dog1;
 
 
-	const WrongAnimal* griffin = new WrongAnimal();
-	std::cout << "--------------------------------" << std::endl;
-	const WrongAnimal* cat = new WrongCat();
-	std::cout << "--------------------------------" << std::endl;
+	Animal* griffin[10];
+	int i;
 
-	std::cout << cat->getType() << " " << std::endl;
-	cat->makeSound(); //will output the cat sound!
-	std::cout << std::endl;
-	griffin->makeSound();
-	delete griffin;
-	delete cat;
+	i = -1;
+	while (++i < 10)
+	{
+		if (i < 5)
+			griffin[i] = new Cat();
+		else
+			griffin[i] = new Dog();
+	}
+	i = -1;
+	while (++i < 10)
+		delete griffin[i];
+	
 	return (0);
 }

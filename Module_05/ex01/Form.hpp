@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 17:23:39 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/18 20:52:26 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/18 21:14:44 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <iostream>
 # include <exception>
 # include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 typedef std::string	str_t;
 
@@ -31,6 +33,7 @@ class Form
 		// Constructors and destructors
 		Form(void);
 		~Form(void);
+		Form(const str_t& name, bool _isSigned, const unsigned int minSignGrade, const unsigned int minExecGrade);
 		Form(const Form & other);
 		// Assignment operator overload
 		Form & operator=(const Form & other);

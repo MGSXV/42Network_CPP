@@ -6,21 +6,26 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 17:23:30 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/18 21:04:32 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/18 21:18:34 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
 // Constructors and destructors
-Form::Form(void) : name("Form"), minExecGrade(1), minSignGrade(1)
+Form::Form(void) : name("Form"), minSignGrade(1), minExecGrade(1)
 {
 	this->_isSigned = false;
 }
 
 Form::~Form(void) { }
 
-Form::Form(const Form& other) : name(other.name) , minExecGrade(other.minExecGrade), minSignGrade(other.minSignGrade)
+Form::Form(const str_t& name, bool _isSigned, const unsigned int minSignGrade, const unsigned int minExecGrade) : name(name), minSignGrade(minExecGrade), minExecGrade(minSignGrade)
+{
+	this->_isSigned = _isSigned;
+}
+
+Form::Form(const Form& other) : name(other.name), minSignGrade(other.minSignGrade), minExecGrade(other.minExecGrade)
 {
 	this->_isSigned = other.isSigned();
 }
@@ -40,6 +45,7 @@ std::ostream&	Form::operator<<(std::ostream &out)
 	std::cout << "Form's minimum sign grade		 : " << minExecGrade << std::endl;
 	std::cout << "Form's minimum execution grade : " << minExecGrade << std::endl;
 	std::cout << "Is the form signed?			 : " << _isSigned << std::endl;
+	return (out);
 }
 
 // Getters and setters

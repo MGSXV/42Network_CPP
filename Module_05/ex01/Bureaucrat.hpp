@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 21:03:58 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/18 17:21:22 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/18 21:00:07 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 # include <iostream>
 # include <exception>
+# include "Form.hpp"
 
 typedef std::string	str_t;
 
@@ -38,8 +39,9 @@ class Bureaucrat
 		unsigned int	getGrade() const;
 		void	 		setGrade(unsigned int grade);
 		// Member functions
-		void incrementGrade(void);
-		void decrementGrade(void);
+		void	incrementGrade(void);
+		void	decrementGrade(void);
+		void	signForm(Form &form);
 		class GradeTooLowException : public std::exception
 		{
 			public:

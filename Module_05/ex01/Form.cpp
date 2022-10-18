@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 17:23:30 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/18 20:58:08 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/18 21:04:32 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,10 +84,10 @@ void	Form::beSigned(Bureaucrat& b)
 // Exeptions Handling
 const char*	Form::GradeTooHighException::what(void) const  throw()
 {
-	return ("\033[0;31mForm can't be signed because the grade is too high!\033[0;37m");
+	return ("\033[0;31mThe grade is too high!\033[0;37m");
 }
 
 const char*	Form::GradeTooLowException::what(void) const  throw()
 {
-	return ("\033[0;31mForm can't be signed because the grade is too low!\033[0;37m");
+	return ("\033[0;31mThe grade is too low!\033[0;37m");
 }

@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 17:23:39 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/18 18:45:02 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/18 18:48:53 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Form
 {
 	private:
 		const str_t			name;
-		bool				isSigned;
+		bool				_isSigned;
 		const unsigned int	minSignGrade;
 		const unsigned int	minExecGrade;
 	public:

@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 21:03:58 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/18 21:00:07 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/18 21:16:07 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <iostream>
 # include <exception>
 # include "Form.hpp"
+
+class Form;
 
 typedef std::string	str_t;
 

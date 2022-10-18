@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 21:03:58 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/18 03:49:00 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/18 17:21:22 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Bureaucrat
 		// Constructors and destructors
 		Bureaucrat(void);
 		~Bureaucrat(void);
-		Bureaucrat(const str_t &name);
+		Bureaucrat(const str_t &name, unsigned int grade);
 		Bureaucrat(const Bureaucrat &other);
 		// Assignment operator overload
 		Bureaucrat &operator=(const Bureaucrat &other);
@@ -36,9 +36,20 @@ class Bureaucrat
 		// Getters and setters
 		const str_t		getName() const;
 		unsigned int	getGrade() const;
+		void	 		setGrade(unsigned int grade);
 		// Member functions
 		void incrementGrade(void);
 		void decrementGrade(void);
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				const char* what(void) const throw();
+		};
+		class GradeTooHighException : public std::exception
+		{
+			public:
+			const char* what(void) const throw();
+		};
 	private:
 		const str_t		name;
 		unsigned int	grade;

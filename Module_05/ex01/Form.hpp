@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 17:23:39 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/18 18:48:53 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/18 20:52:26 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,20 @@ class Form
 		// Getters and setters
 		const str_t&		getName(void) const;
 		bool				isSigned(void) const;
-		const unsigned int	getMinSignGrade(void) const;
-		const unsigned int	getMinExecGrade(void) const;
+		const unsigned int&	getMinSignGrade(void) const;
+		const unsigned int&	getMinExecGrade(void) const;
 		// Member functions
 		void	beSigned(Bureaucrat& b);
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				const char* what(void) const throw();
+		};
+		class GradeTooHighException : public std::exception
+		{
+			public:
+				const char* what(void) const throw();
+		};
 };
 
 #endif

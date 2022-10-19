@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 17:23:30 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/19 01:42:21 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/19 03:24:02 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,6 @@ Form::Form(const Form& other) : name(other.name), minSignGrade(other.minSignGrad
 {
 	this->_isSigned = other.isSigned();
 }
-
-// Assignment operator overload
-Form& Form::operator=(const Form& other)
-{
-	Form form = Form(other);
-
-	return (*this);
-};
 
 // Insertion operator overload
 std::ostream&	operator<<(std::ostream &out, Form &form)
@@ -70,14 +62,14 @@ const unsigned int& Form::getMinExecGrade(void) const
 }
 
 // Member functions
-void	Form::beSigned(Bureaucrat& b)
-{
-	if (b.getGrade() > this->getMinSignGrade())
-	{
-		throw Form::GradeTooLowException();
-	}
-	this->_isSigned = true;
-}
+// void	Form::beSigned(Bureaucrat& b)
+// {
+// 	if (b.getGrade() > this->getMinSignGrade())
+// 	{
+// 		throw Form::GradeTooLowException();
+// 	}
+// 	this->_isSigned = true;
+// }
 
 // Exeptions Handling
 const char*	Form::GradeTooHighException::what(void) const  throw()

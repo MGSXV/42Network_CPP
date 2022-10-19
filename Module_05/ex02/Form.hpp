@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 17:23:39 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/18 22:00:45 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/19 03:23:35 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ class Form
 		~Form(void);
 		Form(const str_t& name, bool _isSigned, const unsigned int minSignGrade, const unsigned int minExecGrade);
 		Form(const Form & other);
-		// Assignment operator overload
-		Form & operator=(const Form & other);
         // Accessors
 		// Getters and setters
 		const str_t&		getName(void) const;
@@ -44,7 +42,7 @@ class Form
 		const unsigned int&	getMinSignGrade(void) const;
 		const unsigned int&	getMinExecGrade(void) const;
 		// Member functions
-		void	beSigned(Bureaucrat& b);
+		virtual void	beSigned(Bureaucrat& b) = 0;
 		class GradeTooLowException : public std::exception
 		{
 			public:

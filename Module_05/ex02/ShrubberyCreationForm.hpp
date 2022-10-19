@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 01:58:57 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/19 09:26:14 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/19 09:31:55 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 # include <iostream>
 # include <exception>
+# include <fstream>
 # include "Form.hpp"
 # include "Bureaucrat.hpp"
 

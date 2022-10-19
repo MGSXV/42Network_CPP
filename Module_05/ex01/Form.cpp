@@ -6,14 +6,14 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 17:23:30 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/18 21:18:34 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/19 01:42:21 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
 // Constructors and destructors
-Form::Form(void) : name("Form"), minSignGrade(1), minExecGrade(1)
+Form::Form(void) : name("Chahadat sokna"), minSignGrade(1), minExecGrade(1)
 {
 	this->_isSigned = false;
 }
@@ -39,12 +39,12 @@ Form& Form::operator=(const Form& other)
 };
 
 // Insertion operator overload
-std::ostream&	Form::operator<<(std::ostream &out)
+std::ostream&	operator<<(std::ostream &out, Form &form)
 {
-	std::cout << "Form's name					 : " << name << std::endl;
-	std::cout << "Form's minimum sign grade		 : " << minExecGrade << std::endl;
-	std::cout << "Form's minimum execution grade : " << minExecGrade << std::endl;
-	std::cout << "Is the form signed?			 : " << _isSigned << std::endl;
+	std::cout << "Form's name			 : " << form.getName() << std::endl;
+	std::cout << "Form's minimum sign grade	 : " << form.getMinSignGrade() << std::endl;
+	std::cout << "Form's minimum execution grade	 : " << form.getMinExecGrade() << std::endl;
+	std::cout << "Is the form signed?		 : " << form.isSigned() << std::endl;
 	return (out);
 }
 
@@ -72,19 +72,11 @@ const unsigned int& Form::getMinExecGrade(void) const
 // Member functions
 void	Form::beSigned(Bureaucrat& b)
 {
-	try
+	if (b.getGrade() > this->getMinSignGrade())
 	{
-		if (b.getGrade() > 150)
-			throw Form::GradeTooLowException();
-		else if (b.getGrade() < 1)
-			throw Form::GradeTooHighException();
-		else
-			this->_isSigned = true;
+		throw Form::GradeTooLowException();
 	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	this->_isSigned = true;
 }
 
 // Exeptions Handling

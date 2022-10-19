@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 17:23:39 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/18 21:14:44 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/18 22:00:45 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ class Form
 		Form(const Form & other);
 		// Assignment operator overload
 		Form & operator=(const Form & other);
-		// Insertion operator overload
-		std::ostream & operator<<(std::ostream &out);
         // Accessors
 		// Getters and setters
 		const str_t&		getName(void) const;
@@ -58,5 +56,7 @@ class Form
 				const char* what(void) const throw();
 		};
 };
+// Insertion operator overload
+std::ostream & operator<<(std::ostream &out, Form& form);
 
 #endif

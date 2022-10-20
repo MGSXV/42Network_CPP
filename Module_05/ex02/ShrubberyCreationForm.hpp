@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 01:58:57 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/19 09:31:55 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/20 05:50:50 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ class ShrubberyCreationForm : public Form
 		ShrubberyCreationForm(void);
 		~ShrubberyCreationForm(void);
 		ShrubberyCreationForm(const str_t& name);
+		ShrubberyCreationForm(const str_t& name, bool _isSigned, const unsigned int minSignGrade, const unsigned int minExecGrade);
 		ShrubberyCreationForm(const ShrubberyCreationForm & other);
 		// Assignment operator overload
 		ShrubberyCreationForm& operator=(const ShrubberyCreationForm & other);

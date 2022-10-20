@@ -6,13 +6,13 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 01:56:43 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/19 09:39:30 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/20 08:41:19 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(void) : name("Chahadat sokna"), minSignGrade(145), minExecGrade(137)
+ShrubberyCreationForm::ShrubberyCreationForm(void) : name("chahadat lwafat"), minSignGrade(145), minExecGrade(137)
 {
 	this->_isSigned = false;
 }
@@ -27,6 +27,11 @@ ShrubberyCreationForm::ShrubberyCreationForm(const str_t& name) : name(name), mi
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm & other) : name(other.name), minSignGrade(other.minSignGrade), minExecGrade(other.minExecGrade)
 {
 	this->_isSigned = other._isSigned;
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(const str_t& name, bool _isSigned, const unsigned int minSignGrade, const unsigned int minExecGrade) : name(name), minSignGrade(minSignGrade), minExecGrade(minExecGrade)
+{
+	this->_isSigned = _isSigned;
 }
 
 // Assignment operator overload
@@ -51,13 +56,13 @@ void	ShrubberyCreationForm::beSigned(Bureaucrat& b)
 		exit(1);
 	}
 	treeFile << "                                  # #### ####" << std::endl;
-	treeFile << "                                ### \/#|### |/####" << std::endl;
-	treeFile << "                               ##\/#/ \||/##/_/##/_#" << std::endl;
-	treeFile << "                             ###  \/###|/ \/ # ###" << std::endl;
-	treeFile << "                           ##_\_#\_\## | #/###_/_####" << std::endl;
-	treeFile << "                          ## #### # \ #| /  #### ##/##" << std::endl;
+	treeFile << "                                ### \\/#|### |/####" << std::endl;
+	treeFile << "                               ##\\/#/ \\||/##/_/##/_#" << std::endl;
+	treeFile << "                             ###  \\/###|/ \\/ # ###" << std::endl;
+	treeFile << "                           ##_\\_#\\_\\## | #/###_/_####" << std::endl;
+	treeFile << "                          ## #### # \\ #| /  #### ##/##" << std::endl;
 	treeFile << "                           __#_--###`  |{,###---###-~" << std::endl;
-	treeFile << "                                     \ }{" << std::endl;
+	treeFile << "                                     \\ }{" << std::endl;
 	treeFile << "                                      }}{" << std::endl;
 	treeFile << "                                      }}{" << std::endl;
 	treeFile << "                                      {{}" << std::endl;

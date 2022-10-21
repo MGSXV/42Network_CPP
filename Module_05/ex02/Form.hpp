@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 17:23:39 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/19 03:23:35 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/21 21:23:31 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ class Form
 		const unsigned int&	getMinSignGrade(void) const;
 		const unsigned int&	getMinExecGrade(void) const;
 		// Member functions
-		virtual void	beSigned(Bureaucrat& b) = 0;
+		virtual void	beSigned(Bureaucrat& b);
+		virtual void	execute(Bureaucrat const & executor) const = 0;
 		class GradeTooLowException : public std::exception
 		{
 			public:

@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 01:59:02 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/20 08:42:12 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/21 06:05:52 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,12 @@ class RobotomyRequestForm : public Form
 		bool				_isSigned;
 		const unsigned int	minSignGrade;
 		const unsigned int	minExecGrade;
+		str_t				target;
     public:
         // Constructors and destructors
 		RobotomyRequestForm(void);
+		RobotomyRequestForm(str_t target);
+		RobotomyRequestForm(const str_t& name, str_t target);
 		~RobotomyRequestForm(void);
 		RobotomyRequestForm(const str_t& name);
 		RobotomyRequestForm(const RobotomyRequestForm & other);

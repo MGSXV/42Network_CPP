@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 01:59:06 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/20 08:44:00 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/21 06:06:08 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,12 @@ class PresidentialPardonForm : public Form
 		bool				_isSigned;
 		const unsigned int	minSignGrade;
 		const unsigned int	minExecGrade;
+		str_t				target;
     public:
         PresidentialPardonForm(void);
+		PresidentialPardonForm(str_t target);
 		~PresidentialPardonForm(void);
-		PresidentialPardonForm(const str_t& name);
-		PresidentialPardonForm(const str_t& name, bool _isSigned, const unsigned int minSignGrade, const unsigned int minExecGrade);
+		PresidentialPardonForm(const str_t& name, str_t target);
 		PresidentialPardonForm(const PresidentialPardonForm & other);
 		// Assignment operator overload
 		PresidentialPardonForm& operator=(const PresidentialPardonForm & other);

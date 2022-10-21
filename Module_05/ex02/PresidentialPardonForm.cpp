@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 01:56:40 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/20 08:55:21 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/21 06:06:16 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,24 @@ PresidentialPardonForm::PresidentialPardonForm(void) : name("chahadat lwafat"), 
 	this->_isSigned = false;
 }
 
-PresidentialPardonForm::~PresidentialPardonForm(void) { }
-
-PresidentialPardonForm::PresidentialPardonForm(const str_t& name) : name(name), minSignGrade(25), minExecGrade(5)
+PresidentialPardonForm::PresidentialPardonForm(str_t target) : name("chahadat lwafat"), minSignGrade(25), minExecGrade(5)
 {
 	this->_isSigned = false;
+	this->target = target;
+}
+
+PresidentialPardonForm::~PresidentialPardonForm(void) { }
+
+PresidentialPardonForm::PresidentialPardonForm(const str_t& name, str_t target) : name(name), minSignGrade(25), minExecGrade(5)
+{
+	this->_isSigned = false;
+	this->target = target;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm & other) : name(other.name), minSignGrade(other.minSignGrade), minExecGrade(other.minExecGrade)
 {
 	this->_isSigned = other._isSigned;
-}
-
-PresidentialPardonForm::PresidentialPardonForm(const str_t& name, bool _isSigned, const unsigned int minSignGrade, const unsigned int minExecGrade) : name(name), minSignGrade(minSignGrade), minExecGrade(minExecGrade)
-{
-	this->_isSigned = _isSigned;
+	this->target = other.target;
 }
 
 // Assignment operator overload

@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 01:59:06 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/21 06:06:08 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/21 21:41:43 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class PresidentialPardonForm : public Form
 		// Assignment operator overload
 		PresidentialPardonForm& operator=(const PresidentialPardonForm & other);
 		// Member functions
-		void	beSigned(Bureaucrat& b);
+		void	execute(Bureaucrat const & executor) const;
 };
 
 #endif

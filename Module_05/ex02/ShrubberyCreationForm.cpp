@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 01:56:43 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/21 21:28:19 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/21 21:36:10 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	std::ofstream	treeFile;
-	if (this-_isSigned)
+	if (this->_isSigned)
 	{
 		try
 		{

@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 01:56:51 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/21 06:08:17 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/21 21:36:35 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,28 +44,27 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm & 
 }
 
 // Member functions
-void	RobotomyRequestForm::beSigned(Bureaucrat& b)
+void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	try
+	if (this->_isSigned)
 	{
-		if (b.getGrade() > this->getMinSignGrade())
+		try
 		{
-			throw Form::GradeTooLowException();
+			if (executor.getGrade() > this->getMinSignGrade())
+			{
+				throw Form::GradeTooLowException();
+			}
+			std::cout << "ZZzzzzzZZzzzzzZZZzzzzzZZzZZZZzzzZZzzZZzzz" << std::endl;
+			if (rand() % 2)
+				std::cout << this->target << " has been robotomized successfully." << std::endl;
+			else
+				std::cout << "Robotomy failed." << std::endl;
 		}
-		this->_isSigned = true;
-		std::cout << "ZZzzzzzZZzzzzzZZZzzzzzZZzZZZZzzzZZzzZZzzz" << std::endl;
-		if (rand() % 2)
+		catch(const std::exception& e)
 		{
-			this->_isSigned = true;
-			std::cout << this->target << " has been robotomized successfully." << std::endl;
+			std::cerr << e.what() << '\n';
 		}
-		else
-			std::cout << "Robotomy failed." << std::endl;
 	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	
-	
+	else
+		std::cerr << "\033[0;31mThis form is not signed!\033[0;37m" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 01:59:02 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/21 06:05:52 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/21 21:40:10 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class RobotomyRequestForm : public Form
         // Assignment operator overload
         RobotomyRequestForm& operator=(const RobotomyRequestForm & other);
         // Member functions
-        void	beSigned(Bureaucrat& b);
+		void	execute(Bureaucrat const & executor) const;
 };
 
 #endif

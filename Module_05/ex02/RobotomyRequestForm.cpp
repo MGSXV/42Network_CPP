@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 01:56:51 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/21 06:05:37 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/21 06:08:17 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	RobotomyRequestForm::beSigned(Bureaucrat& b)
 		if (rand() % 2)
 		{
 			this->_isSigned = true;
-			std::cout << b.getName() << " has been robotomized successfully." << std::endl;
+			std::cout << this->target << " has been robotomized successfully." << std::endl;
 		}
 		else
 			std::cout << "Robotomy failed." << std::endl;

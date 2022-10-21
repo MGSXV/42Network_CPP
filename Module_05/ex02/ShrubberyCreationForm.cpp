@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 01:56:43 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/21 06:05:57 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/21 06:07:59 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ShrubberyCreationForm::beSigned(Bureaucrat& b)
 			throw Form::GradeTooLowException();
 		}
 		this->_isSigned = true;
-		treeFile.open("signature", std::ios_base::app);
+		treeFile.open(this->target + "_signature", std::ios_base::app);
 		if (!treeFile)
 		{
 			std::cout << "\033[0;31mError opening destination file!\033[0;37m" << std::endl;

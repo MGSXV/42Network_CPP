@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 01:56:40 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/21 06:06:16 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/21 06:08:31 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 void	PresidentialPardonForm::beSigned(Bureaucrat& b)
 {
 	this->_isSigned = true;
-	std::cout << b.getName() <<  "jah 3afw malaki." << std::endl;
+	std::cout << this->target <<  "jah 3afw malaki." << std::endl;
 }

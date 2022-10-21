@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 01:56:51 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/21 21:36:35 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/21 22:20:56 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,22 +48,15 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
 	if (this->_isSigned)
 	{
-		try
+		if (executor.getGrade() > this->getMinSignGrade())
 		{
-			if (executor.getGrade() > this->getMinSignGrade())
-			{
-				throw Form::GradeTooLowException();
-			}
-			std::cout << "ZZzzzzzZZzzzzzZZZzzzzzZZzZZZZzzzZZzzZZzzz" << std::endl;
-			if (rand() % 2)
-				std::cout << this->target << " has been robotomized successfully." << std::endl;
-			else
-				std::cout << "Robotomy failed." << std::endl;
+			throw Form::GradeTooLowException();
 		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << '\n';
-		}
+		std::cout << "ZZzzzzzZZzzzzzZZZzzzzzZZzZZZZzzzZZzzZZzzz" << std::endl;
+		if (rand() % 2)
+			std::cout << this->target << " has been robotomized successfully." << std::endl;
+		else
+			std::cout << "Robotomy failed." << std::endl;
 	}
 	else
 		std::cerr << "\033[0;31mThis form is not signed!\033[0;37m" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 01:56:40 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/21 21:44:00 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/21 22:21:09 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,16 +47,9 @@ void	PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
 	if (this->_isSigned)
 	{
-		try
-		{
-			if (executor.getGrade() < this->getMinSignGrade())
-				throw Form::GradeTooLowException();
-			std::cout << this->target <<  "jah 3afw malaki." << std::endl;
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << '\n';
-		}
+		if (executor.getGrade() < this->getMinSignGrade())
+			throw Form::GradeTooLowException();
+		std::cout << this->target <<  "jah 3afw malaki." << std::endl;
 	}
 	else
 		std::cerr << "\033[0;31mThis form is not signed!\033[0;37m" << std::endl;

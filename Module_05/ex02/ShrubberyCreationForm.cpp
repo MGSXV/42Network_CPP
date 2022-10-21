@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 01:56:43 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/21 06:07:59 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/21 21:28:19 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,40 +44,44 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 }
 
 // Member functions
-void	ShrubberyCreationForm::beSigned(Bureaucrat& b)
+void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	std::ofstream	treeFile;
-	try
+	if (this-_isSigned)
 	{
-		if (b.getGrade() > this->getMinSignGrade())
+		try
 		{
-			throw Form::GradeTooLowException();
+			if (executor.getGrade() > this->getMinSignGrade())
+			{
+				throw Form::GradeTooLowException();
+			}
+			treeFile.open(this->target + "_signature", std::ios_base::app);
+			if (!treeFile)
+			{
+				std::cout << "\033[0;31mError opening destination file!\033[0;37m" << std::endl;
+				exit(1);
+			}
+			treeFile << "                                  # #### ####" << std::endl;
+			treeFile << "                                ### \\/#|### |/####" << std::endl;
+			treeFile << "                               ##\\/#/ \\||/##/_/##/_#" << std::endl;
+			treeFile << "                             ###  \\/###|/ \\/ # ###" << std::endl;
+			treeFile << "                           ##_\\_#\\_\\## | #/###_/_####" << std::endl;
+			treeFile << "                          ## #### # \\ #| /  #### ##/##" << std::endl;
+			treeFile << "                           __#_--###`  |{,###---###-~" << std::endl;
+			treeFile << "                                     \\ }{" << std::endl;
+			treeFile << "                                      }}{" << std::endl;
+			treeFile << "                                      }}{" << std::endl;
+			treeFile << "                                      {{}" << std::endl;
+			treeFile << "                                , -=-~{ .-^- _" << std::endl;
+			treeFile << "                                      `}" << std::endl;
+			treeFile << "                                      `}" << std::endl;
+			treeFile.close();
 		}
-		this->_isSigned = true;
-		treeFile.open(this->target + "_signature", std::ios_base::app);
-		if (!treeFile)
+		catch(const std::exception& e)
 		{
-			std::cout << "\033[0;31mError opening destination file!\033[0;37m" << std::endl;
-			exit(1);
+			std::cerr << e.what() << '\n';
 		}
-		treeFile << "                                  # #### ####" << std::endl;
-		treeFile << "                                ### \\/#|### |/####" << std::endl;
-		treeFile << "                               ##\\/#/ \\||/##/_/##/_#" << std::endl;
-		treeFile << "                             ###  \\/###|/ \\/ # ###" << std::endl;
-		treeFile << "                           ##_\\_#\\_\\## | #/###_/_####" << std::endl;
-		treeFile << "                          ## #### # \\ #| /  #### ##/##" << std::endl;
-		treeFile << "                           __#_--###`  |{,###---###-~" << std::endl;
-		treeFile << "                                     \\ }{" << std::endl;
-		treeFile << "                                      }}{" << std::endl;
-		treeFile << "                                      }}{" << std::endl;
-		treeFile << "                                      {{}" << std::endl;
-		treeFile << "                                , -=-~{ .-^- _" << std::endl;
-		treeFile << "                                      `}" << std::endl;
-		treeFile << "                                      `}" << std::endl;
-		treeFile.close();
 	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	else
+		std::cerr << "\033[0;31mThis form is not signed!\033[0;37m" << std::endl;
 }

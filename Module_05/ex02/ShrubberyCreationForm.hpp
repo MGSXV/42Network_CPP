@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 01:58:57 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/21 06:05:47 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/21 21:19:04 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ class ShrubberyCreationForm : public Form
 		// Assignment operator overload
 		ShrubberyCreationForm& operator=(const ShrubberyCreationForm & other);
 		// Member functions
-		void	beSigned(Bureaucrat& b);
+		void	execute(Bureaucrat const & executor) const;
 };
 
 #endif

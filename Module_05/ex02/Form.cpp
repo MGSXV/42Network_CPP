@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 17:23:30 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/19 03:24:02 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/21 21:46:58 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,14 @@ const unsigned int& Form::getMinExecGrade(void) const
 }
 
 // Member functions
-// void	Form::beSigned(Bureaucrat& b)
-// {
-// 	if (b.getGrade() > this->getMinSignGrade())
-// 	{
-// 		throw Form::GradeTooLowException();
-// 	}
-// 	this->_isSigned = true;
-// }
+void	Form::beSigned(Bureaucrat& b)
+{
+	if (b.getGrade() > this->getMinSignGrade())
+	{
+		throw Form::GradeTooLowException();
+	}
+	this->_isSigned = true;
+}
 
 // Exeptions Handling
 const char*	Form::GradeTooHighException::what(void) const  throw()

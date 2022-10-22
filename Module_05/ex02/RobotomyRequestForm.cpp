@@ -5,59 +5,61 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 01:56:51 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/21 22:20:56 by sel-kham         ###   ########.fr       */
+/*   Created: 2022/10/22 05:46:08 by sel-kham          #+#    #+#             */
+/*   Updated: 2022/10/22 05:54:18 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(void) : name("chahadat lwafat"), minSignGrade(72), minExecGrade(45)
+RobotomyRequestForm::RobotomyRequestForm(void) : Form("RobotomyRequestForm", false, 72, 45)
 {
-	this->_isSigned = false;
-}
-
-RobotomyRequestForm::RobotomyRequestForm(str_t target) : name("chahadat lwafat"), minSignGrade(72), minExecGrade(45)
-{
-	this->_isSigned = false;
-	this->target = target;
+	this->setTarget("default target");
 }
 
 RobotomyRequestForm::~RobotomyRequestForm(void) { }
 
-RobotomyRequestForm::RobotomyRequestForm(const str_t& name, str_t target) : name(name), minSignGrade(72), minExecGrade(45)
+RobotomyRequestForm::RobotomyRequestForm(str_t target) : Form("RobotomyRequestForm", false, 72, 45)
 {
-	this->_isSigned = false;
-	this->target = target;
+	this->setTarget(target);
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm & other) : name(other.name), minSignGrade(other.minSignGrade), minExecGrade(other.minExecGrade)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &cpy): Form(cpy.getName(), cpy.isSigned(), cpy.getMinGradeToSign(), cpy.getMinGradeToExec())
 {
-	this->_isSigned = other._isSigned;
-	this->target = other.target;
+	this->setTarget(cpy.getTarget());
 }
 
 // Assignment operator overload
-RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm & other)
+RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &cpy)
 {
-	return (*(new RobotomyRequestForm(other)));
+	RobotomyRequestForm*	newSCF = new RobotomyRequestForm(cpy);
+	return (*newSCF);
+}
+
+// Getters and setters
+void	RobotomyRequestForm::setTarget(const str_t target)
+{
+	this->target = target;
+}
+
+str_t    RobotomyRequestForm::getTarget(void) const
+{
+	return (this->target);
 }
 
 // Member functions
-void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
+void	RobotomyRequestForm::execute(Bureaucrat &b) const
 {
-	if (this->_isSigned)
+	if (b.getGrade() <= this->getMinGradeToSign())
 	{
-		if (executor.getGrade() > this->getMinSignGrade())
+		if (!this->_isSigned)
 		{
-			throw Form::GradeTooLowException();
+			std::cout << "ZZzzZZzzzzZZZzzZZzzZZZZzzz" << std::endl;
+			srand(time(nullptr));
+			std::cout << this->getTarget() << (rand() % 2 ? " has been robotomized successfully" : " has faild") << std::endl;
 		}
-		std::cout << "ZZzzzzzZZzzzzzZZZzzzzzZZzZZZZzzzZZzzZZzzz" << std::endl;
-		if (rand() % 2)
-			std::cout << this->target << " has been robotomized successfully." << std::endl;
-		else
-			std::cout << "Robotomy failed." << std::endl;
 	}
 	else
-		std::cerr << "\033[0;31mThis form is not signed!\033[0;37m" << std::endl;
+		throw Form::GradeTooLowException();
 }
+

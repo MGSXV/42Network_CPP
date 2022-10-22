@@ -5,42 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 01:59:02 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/21 21:40:10 by sel-kham         ###   ########.fr       */
+/*   Created: 2022/10/22 05:44:37 by sel-kham          #+#    #+#             */
+/*   Updated: 2022/10/22 05:45:30 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef __ROBOTOMYREQUESTFORM_HPP__
-# define __ROBOTOMYREQUESTFORM_HPP__
+#ifndef __ROBOTOMYREQUESTFORM_H__
+# define __ROBOTOMYREQUESTFORM_H__
 
 # include <iostream>
 # include <exception>
-# include <cstdlib>
+# include <fstream>
 # include "Form.hpp"
 
 typedef std::string	str_t;
 
-class RobotomyRequestForm : public Form
+class	RobotomyRequestForm : public Form
 {
 	private:
-		const str_t			name;
-		bool				_isSigned;
-		const unsigned int	minSignGrade;
-		const unsigned int	minExecGrade;
-		str_t				target;
-    public:
-        // Constructors and destructors
+		str_t	target;
+	public:
+		// Constructors and destructors
 		RobotomyRequestForm(void);
-		RobotomyRequestForm(str_t target);
-		RobotomyRequestForm(const str_t& name, str_t target);
 		~RobotomyRequestForm(void);
-		RobotomyRequestForm(const str_t& name);
-		RobotomyRequestForm(const RobotomyRequestForm & other);
-        // Assignment operator overload
-        RobotomyRequestForm& operator=(const RobotomyRequestForm & other);
-        // Member functions
-		void	execute(Bureaucrat const & executor) const;
+		RobotomyRequestForm(str_t target);
+		RobotomyRequestForm(const RobotomyRequestForm &cpy);
+		// Assignment operator overload
+		RobotomyRequestForm &operator=(const RobotomyRequestForm &cpy);
+		// Getters and setters
+		void	setTarget(const str_t target);
+		str_t    getTarget(void) const;
+		// Member functions
+		void	execute(Bureaucrat &b) const;
 };
 
 #endif

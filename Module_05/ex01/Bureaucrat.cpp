@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 01:28:12 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/22 04:02:34 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/23 00:41:04 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,15 @@ unsigned short	Bureaucrat::getGrade(void) const
 void	Bureaucrat::setGrade(const unsigned int grade)
 {
 	if (grade < 1)
+	{
+		this->grade = 1;
 		throw Bureaucrat::GradeTooHighException();
+	}
 	else if (grade > 150)
+	{
+		this->grade = 150;
 		throw Bureaucrat::GradeTooLowException();
+	}
 	else
 		this->grade = grade;
 }

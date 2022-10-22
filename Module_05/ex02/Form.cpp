@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 02:28:21 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/22 03:06:30 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/22 05:27:17 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,6 @@ Form::Form(const str_t name, bool _isSigned, const unsigned int minGradeToSign, 
 Form::Form(const Form &form) : name(form.name), minGradeToSign(form.minGradeToSign), minGradeToExec(form.minGradeToExec)
 {
 	this->_isSigned = form._isSigned;
-}
-
-// Assignment operator overload
-Form	&Form::operator=(const Form &form)
-{
-	Form *newF = new Form(form);
-	return (*newF); 
 }
 
 std::ostream&	operator<<(std::ostream& out, const Form &form)

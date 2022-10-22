@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 02:28:18 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/22 04:08:14 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/22 05:28:30 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,9 @@ class	Form
 	public:
 		// Constructors and destructors
 		Form(void);
-		virtual ~Form(void) = 0;
+		~Form(void);
 		Form(const str_t name, bool _isSigned, const unsigned int minGradeToSign, const unsigned int minGradeToExec);
 		Form(const Form &form);
-		// Assignment operator overload
-		Form	&operator=(const Form &form);
 		// Getters and setters
 		str_t			getName(void) const;
 		bool			isSigned(void) const;
@@ -45,6 +43,7 @@ class	Form
 		void			setIsSigned(bool isSigned);
 		// Member functions
 		void			beSigned(Bureaucrat &b);
+		virtual void	execute(Bureaucrat &b) const = 0;
 		// Exeptions handling
 		class GradeTooLowException : public std::exception
 		{

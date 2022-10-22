@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 21:03:58 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/21 22:16:37 by sel-kham         ###   ########.fr       */
+/*   Created: 2022/10/22 01:28:09 by sel-kham          #+#    #+#             */
+/*   Updated: 2022/10/22 03:53:24 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,33 +18,34 @@
 # include <exception>
 # include "Form.hpp"
 
-class Form;
-
 typedef std::string	str_t;
 
-class Bureaucrat
+class Form;
+class	Bureaucrat
 {
+	private:
+		const str_t		name;
+		unsigned int	grade;
+		// Operators overload
+		Bureaucrat	&operator--(void);
+		Bureaucrat	&operator++(void);
 	public:
 		// Constructors and destructors
 		Bureaucrat(void);
 		~Bureaucrat(void);
-		Bureaucrat(const str_t &name, unsigned int grade);
-		Bureaucrat(const Bureaucrat &other);
-		// Assignment operator overload
-		Bureaucrat &operator=(const Bureaucrat &other);
-		Bureaucrat	&operator++(void);
-		Bureaucrat	&operator--(void);
-		Bureaucrat	&operator++(int);
-		Bureaucrat	&operator--(int);
+		Bureaucrat(const str_t& name, unsigned int grade);
+		Bureaucrat(const Bureaucrat& obj);
+		// Operators overload
+		Bureaucrat&	operator=(const Bureaucrat& obj);
 		// Getters and setters
-		const str_t		getName() const;
-		unsigned int	getGrade() const;
-		void	 		setGrade(unsigned int grade);
+		str_t			getName(void) const;
+		unsigned short	getGrade(void) const;
+		void			setGrade(const unsigned int grade);
 		// Member functions
 		void	incrementGrade(void);
 		void	decrementGrade(void);
-		void	signForm(Form &form);
-		void	executeForm(Form const & form);
+		void	signForm(Form& form);
+		// Exeptions handling
 		class GradeTooLowException : public std::exception
 		{
 			public:
@@ -53,11 +54,10 @@ class Bureaucrat
 		class GradeTooHighException : public std::exception
 		{
 			public:
-			const char* what(void) const throw();
+				const char* what(void) const throw();
 		};
-	private:
-		const str_t		name;
-		unsigned int	grade;
 };
+
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& b);
 
 #endif

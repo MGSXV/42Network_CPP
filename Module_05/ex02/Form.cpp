@@ -5,79 +5,90 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 17:23:30 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/21 21:46:58 by sel-kham         ###   ########.fr       */
+/*   Created: 2022/10/22 02:28:21 by sel-kham          #+#    #+#             */
+/*   Updated: 2022/10/22 03:06:30 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
 // Constructors and destructors
-Form::Form(void) : name("Chahadat sokna"), minSignGrade(1), minExecGrade(1)
+Form::Form(void) : name("Chahadat sokna"), minGradeToSign(150), minGradeToExec(150)
 {
 	this->_isSigned = false;
+	std::cout << "Sir jib chahadat l7ayat lwl" << std::endl;
 }
 
 Form::~Form(void) { }
 
-Form::Form(const str_t& name, bool _isSigned, const unsigned int minSignGrade, const unsigned int minExecGrade) : name(name), minSignGrade(minExecGrade), minExecGrade(minSignGrade)
+Form::Form(const str_t name, bool _isSigned, const unsigned int minGradeToSign, const unsigned int minGradeToExec) : name(name), minGradeToSign(minGradeToSign), minGradeToExec(minGradeToExec)
 {
 	this->_isSigned = _isSigned;
 }
 
-Form::Form(const Form& other) : name(other.name), minSignGrade(other.minSignGrade), minExecGrade(other.minExecGrade)
+Form::Form(const Form &form) : name(form.name), minGradeToSign(form.minGradeToSign), minGradeToExec(form.minGradeToExec)
 {
-	this->_isSigned = other.isSigned();
+	this->_isSigned = form._isSigned;
 }
 
-// Insertion operator overload
-std::ostream&	operator<<(std::ostream &out, Form &form)
+// Assignment operator overload
+Form	&Form::operator=(const Form &form)
 {
-	std::cout << "Form's name			 : " << form.getName() << std::endl;
-	std::cout << "Form's minimum sign grade	 : " << form.getMinSignGrade() << std::endl;
-	std::cout << "Form's minimum execution grade	 : " << form.getMinExecGrade() << std::endl;
-	std::cout << "Is the form signed?		 : " << form.isSigned() << std::endl;
-	return (out);
+	Form *newF = new Form(form);
+	return (*newF); 
+}
+
+std::ostream&	operator<<(std::ostream& out, const Form &form)
+{
+	out << "Form name :" << form.getName() << std::endl;
+	out << "getMinGradeToSign :" << form.getMinGradeToSign() << std::endl;
+	out << "getMinGradeToExec :" << form.getMinGradeToExec() << std::endl;
+	out << "Is the form signed :" << form.isSigned();
+    return (out);
 }
 
 // Getters and setters
-const str_t& Form::getName(void) const
+str_t	Form::getName(void) const
 {
-	return (name);
+	return (this->name);
 }
 
-bool Form::isSigned(void) const
+bool	Form::isSigned(void) const
 {
 	return (this->_isSigned);
 }
 
-const unsigned int& Form::getMinSignGrade(void) const
+unsigned int	Form::getMinGradeToSign(void) const
 {
-	return (this->minSignGrade);
+	return (this->minGradeToSign);
 }
 
-const unsigned int& Form::getMinExecGrade(void) const
+unsigned int	Form::getMinGradeToExec(void) const
 {
-	return (this->minExecGrade);
+	return (this->minGradeToExec);
 }
 
-// Member functions
-void	Form::beSigned(Bureaucrat& b)
+void    Form::setIsSigned(bool isSigned)
 {
-	if (b.getGrade() > this->getMinSignGrade())
-	{
+	this->_isSigned = isSigned;	
+}
+
+void    Form::beSigned(Bureaucrat &b)
+{
+	if (b.getGrade() <= this->getMinGradeToSign())
+		this->setIsSigned(true);
+	else
 		throw Form::GradeTooLowException();
-	}
-	this->_isSigned = true;
+		
 }
 
-// Exeptions Handling
-const char*	Form::GradeTooHighException::what(void) const  throw()
+// Exeptions handling
+const char*	Form::GradeTooLowException::what(void) const throw()
 {
-	return ("\033[0;31mThe grade is too high!\033[0;37m");
+	return ("\033[0;31mForm can't be signed because bureaucrat's grade is too low!\033[0;37m");
 }
 
-const char*	Form::GradeTooLowException::what(void) const  throw()
+const char*	Form::GradeTooHighException::what(void) const throw()
 {
-	return ("\033[0;31mThe grade is too low!\033[0;37m");
+	return ("\033[0;31mForm can't be signed because bureaucrat's grade is too high!\033[0;37m");
 }

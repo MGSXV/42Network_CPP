@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/18 17:22:19 by sel-kham          #+#    #+#              #
-#    Updated: 2022/10/19 01:58:14 by sel-kham         ###   ########.fr        #
+#    Created: 2022/10/22 01:27:38 by sel-kham          #+#    #+#              #
+#    Updated: 2022/10/22 02:28:32 by sel-kham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,9 +27,9 @@ CFLAGS := -Wall -Wextra -Werror
 C98 := -std=c++98
 
 # Base variables
-NAME := 3afw_malaki
+NAME := form
 MAIN := main.cpp
-FNAME := Bureaucrat Form ShrubberyCreationForm RobotomyRequestForm PresidentialPardonForm
+FNAME := Bureaucrat Form
 REMOVE := rm -rf
 
 # Headers

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 17:23:39 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/21 21:23:31 by sel-kham         ###   ########.fr       */
+/*   Created: 2022/10/22 02:28:18 by sel-kham          #+#    #+#             */
+/*   Updated: 2022/10/22 03:53:07 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,32 +18,34 @@
 # include <exception>
 # include "Bureaucrat.hpp"
 
-class Bureaucrat;
-
 typedef std::string	str_t;
 
-class Form
+class Bureaucrat;
+
+class	Form
 {
 	private:
 		const str_t			name;
 		bool				_isSigned;
-		const unsigned int	minSignGrade;
-		const unsigned int	minExecGrade;
+		const unsigned int	minGradeToSign;
+		const unsigned int	minGradeToExec;
 	public:
 		// Constructors and destructors
 		Form(void);
 		~Form(void);
-		Form(const str_t& name, bool _isSigned, const unsigned int minSignGrade, const unsigned int minExecGrade);
-		Form(const Form & other);
-        // Accessors
+		Form(const str_t name, bool _isSigned, const unsigned int minGradeToSign, const unsigned int minGradeToExec);
+		Form(const Form &form);
+		// Assignment operator overload
+		Form	&operator=(const Form &form);
 		// Getters and setters
-		const str_t&		getName(void) const;
-		bool				isSigned(void) const;
-		const unsigned int&	getMinSignGrade(void) const;
-		const unsigned int&	getMinExecGrade(void) const;
+		str_t			getName(void) const;
+		bool			isSigned(void) const;
+		unsigned int	getMinGradeToSign(void) const;
+		unsigned int	getMinGradeToExec(void) const;
+		void			setIsSigned(bool isSigned);
 		// Member functions
-		virtual void	beSigned(Bureaucrat& b);
-		virtual void	execute(Bureaucrat const & executor) const = 0;
+		void			beSigned(Bureaucrat &b);
+		// Exeptions handling
 		class GradeTooLowException : public std::exception
 		{
 			public:
@@ -55,7 +57,7 @@ class Form
 				const char* what(void) const throw();
 		};
 };
-// Insertion operator overload
-std::ostream & operator<<(std::ostream &out, Form& form);
+
+std::ostream&	operator<<(std::ostream& out, const Form &form);
 
 #endif

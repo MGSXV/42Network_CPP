@@ -6,7 +6,7 @@
 #    By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/22 01:27:38 by sel-kham          #+#    #+#              #
-#    Updated: 2022/10/22 02:28:32 by sel-kham         ###   ########.fr        #
+#    Updated: 2022/10/22 04:22:56 by sel-kham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ C98 := -std=c++98
 # Base variables
 NAME := form
 MAIN := main.cpp
-FNAME := Bureaucrat Form
+FNAME := Bureaucrat Form ShrubberyCreationForm RobotomyRequestForm PresidentialPardonForm
 REMOVE := rm -rf
 
 # Headers

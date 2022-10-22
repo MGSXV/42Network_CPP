@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 01:28:09 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/22 03:53:24 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/22 06:00:41 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ class	Bureaucrat
 		void	incrementGrade(void);
 		void	decrementGrade(void);
 		void	signForm(Form& form);
+		void	executeForm(Form const & form);
 		// Exeptions handling
 		class GradeTooLowException : public std::exception
 		{

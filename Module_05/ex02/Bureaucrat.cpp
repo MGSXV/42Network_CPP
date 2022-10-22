@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 01:28:12 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/22 04:02:34 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/22 06:02:58 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,24 @@ void	Bureaucrat::signForm(Form &form)
 	}
 	else
 		std::cout << "\033[1;30m" << form.getName() << " is already signed " << "\033[0;37m" << std::endl;
+}
+
+void	Bureaucrat::executeForm(Form const &form)
+{
+	if (form.isSigned())
+	{
+		try
+		{
+			form.execute(*this);
+			std::cout << "\033[0;32m" << this->getName() << " executed " << form.getName() << "\033[0;37m" << std::endl;
+		}
+		catch(const std::exception& e)
+		{
+			std::cout << "\033[0;31m" << this->getName() << "  couldn’t execute " << form.getName() << "\033[0;37m" << std::endl;
+		}
+	}
+	else
+		std::cout << "\033[1;30m" << form.getName() << " is not signed!" << "\033[0;37m" << std::endl;
 }
 
 // Exeptions handling

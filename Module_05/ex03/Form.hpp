@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 02:28:18 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/22 05:28:30 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/22 09:05:02 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class	Form
 	public:
 		// Constructors and destructors
 		Form(void);
-		~Form(void);
+		virtual ~Form(void);
 		Form(const str_t name, bool _isSigned, const unsigned int minGradeToSign, const unsigned int minGradeToExec);
 		Form(const Form &form);
 		// Getters and setters

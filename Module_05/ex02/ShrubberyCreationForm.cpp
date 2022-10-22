@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 04:27:39 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/22 05:25:44 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/22 05:44:01 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,37 @@ void	ShrubberyCreationForm::setTarget(const str_t target)
 str_t    ShrubberyCreationForm::getTarget(void) const
 {
 	return (this->target);
+}
+
+// Member functions
+void	ShrubberyCreationForm::execute(Bureaucrat &b) const
+{
+	std::ofstream os;
+
+	if (b.getGrade() <= this->getMinGradeToSign())
+	{
+		if (!this->_isSigned)
+		{
+			os.open(this->getTarget() + "_shrubbery", std::ofstream::out | std::ofstream::app);
+			if (os.is_open())
+			{
+				os << "\
+                        ###\
+                       #o###\
+                     #####o###\
+                    #o#\#|#/###\
+                     ###\|/#o#\
+                      # }|{  #\
+                        }|{" << std::endl;
+				
+			}
+			else
+			{
+				std::cerr << "Couldn't open file!" << std::endl;
+				exit(1);
+			}
+		}
+	}
+	else
+		throw Form::GradeTooLowException();
 }

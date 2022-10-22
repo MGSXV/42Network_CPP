@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 04:24:57 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/22 05:23:55 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/22 05:37:06 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 # include <iostream>
 # include <exception>
+# include <fstream>
 # include "Form.hpp"
 
 typedef std::string	str_t;
@@ -35,6 +36,8 @@ class	ShrubberyCreationForm : public Form
 		// Getters and setters
 		void	setTarget(const str_t target);
 		str_t    getTarget(void) const;
+		// Member functions
+		void	execute(Bureaucrat &b) const;
 };
 
 #endif

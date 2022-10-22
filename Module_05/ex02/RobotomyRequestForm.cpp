@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 05:46:08 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/22 05:54:18 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/22 05:56:45 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	RobotomyRequestForm::execute(Bureaucrat &b) const
 {
 	if (b.getGrade() <= this->getMinGradeToSign())
 	{
-		if (!this->_isSigned)
+		if (this->_isSigned)
 		{
 			std::cout << "ZZzzZZzzzzZZZzzZZzzZZZZzzz" << std::endl;
 			srand(time(nullptr));
@@ -62,4 +62,3 @@ void	RobotomyRequestForm::execute(Bureaucrat &b) const
 	else
 		throw Form::GradeTooLowException();
 }
-

@@ -5,52 +5,60 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 01:56:40 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/21 22:21:09 by sel-kham         ###   ########.fr       */
+/*   Created: 2022/10/22 05:54:44 by sel-kham          #+#    #+#             */
+/*   Updated: 2022/10/22 05:57:24 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(void) : name("chahadat lwafat"), minSignGrade(25), minExecGrade(5)
+PresidentialPardonForm::PresidentialPardonForm(void) : Form("PresidentialPardonForm", false, 25, 5)
 {
-	this->_isSigned = false;
-}
-
-PresidentialPardonForm::PresidentialPardonForm(str_t target) : name("chahadat lwafat"), minSignGrade(25), minExecGrade(5)
-{
-	this->_isSigned = false;
-	this->target = target;
+	this->setTarget("default target");
 }
 
 PresidentialPardonForm::~PresidentialPardonForm(void) { }
 
-PresidentialPardonForm::PresidentialPardonForm(const str_t& name, str_t target) : name(name), minSignGrade(25), minExecGrade(5)
+PresidentialPardonForm::PresidentialPardonForm(str_t target) : Form("PresidentialPardonForm", false, 25, 5)
 {
-	this->_isSigned = false;
-	this->target = target;
+	this->setTarget(target);
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm & other) : name(other.name), minSignGrade(other.minSignGrade), minExecGrade(other.minExecGrade)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &cpy): Form(cpy.getName(), cpy.isSigned(), cpy.getMinGradeToSign(), cpy.getMinGradeToExec())
 {
-	this->_isSigned = other._isSigned;
-	this->target = other.target;
+	this->setTarget(cpy.getTarget());
 }
 
 // Assignment operator overload
-PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm & other)
+PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &cpy)
 {
-	return (*(new PresidentialPardonForm(other)));
+	PresidentialPardonForm*	newSCF = new PresidentialPardonForm(cpy);
+	return (*newSCF);
 }
 
-void	PresidentialPardonForm::execute(Bureaucrat const & executor) const
+// Getters and setters
+void	PresidentialPardonForm::setTarget(const str_t target)
 {
-	if (this->_isSigned)
+	this->target = target;
+}
+
+str_t    PresidentialPardonForm::getTarget(void) const
+{
+	return (this->target);
+}
+
+// Member functions
+void	PresidentialPardonForm::execute(Bureaucrat &b) const
+{
+	if (b.getGrade() <= this->getMinGradeToSign())
 	{
-		if (executor.getGrade() < this->getMinSignGrade())
-			throw Form::GradeTooLowException();
-		std::cout << this->target <<  "jah 3afw malaki." << std::endl;
+		if (this->_isSigned)
+		{
+			std::cout << "ZZzzZZzzzzZZZzzZZzzZZZZzzz" << std::endl;
+			srand(time(nullptr));
+			std::cout << this->getTarget() << " Jah 3afw malaki" << std::endl;
+		}
 	}
 	else
-		std::cerr << "\033[0;31mThis form is not signed!\033[0;37m" << std::endl;
+		throw Form::GradeTooLowException();
 }

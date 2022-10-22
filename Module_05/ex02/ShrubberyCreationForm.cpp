@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 04:27:39 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/22 05:44:01 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/22 05:56:54 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat &b) const
 
 	if (b.getGrade() <= this->getMinGradeToSign())
 	{
-		if (!this->_isSigned)
+		if (this->_isSigned)
 		{
 			os.open(this->getTarget() + "_shrubbery", std::ofstream::out | std::ofstream::app);
 			if (os.is_open())

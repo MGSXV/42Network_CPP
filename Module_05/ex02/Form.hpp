@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 02:28:18 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/22 03:53:07 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/22 04:08:14 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Bureaucrat;
 
 class	Form
 {
-	private:
+	protected:
 		const str_t			name;
 		bool				_isSigned;
 		const unsigned int	minGradeToSign;
@@ -32,7 +32,7 @@ class	Form
 	public:
 		// Constructors and destructors
 		Form(void);
-		~Form(void);
+		virtual ~Form(void) = 0;
 		Form(const str_t name, bool _isSigned, const unsigned int minGradeToSign, const unsigned int minGradeToExec);
 		Form(const Form &form);
 		// Assignment operator overload

@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 05:54:44 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/22 05:57:24 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/22 06:07:41 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,10 @@ str_t    PresidentialPardonForm::getTarget(void) const
 // Member functions
 void	PresidentialPardonForm::execute(Bureaucrat &b) const
 {
-	if (b.getGrade() <= this->getMinGradeToSign())
+	if (b.getGrade() <= this->getMinGradeToExec())
 	{
 		if (this->_isSigned)
 		{
-			std::cout << "ZZzzZZzzzzZZZzzZZzzZZZZzzz" << std::endl;
-			srand(time(nullptr));
 			std::cout << this->getTarget() << " Jah 3afw malaki" << std::endl;
 		}
 	}

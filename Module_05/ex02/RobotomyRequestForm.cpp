@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 05:46:08 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/22 05:56:45 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/22 06:07:57 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ str_t    RobotomyRequestForm::getTarget(void) const
 // Member functions
 void	RobotomyRequestForm::execute(Bureaucrat &b) const
 {
-	if (b.getGrade() <= this->getMinGradeToSign())
+	if (b.getGrade() <= this->getMinGradeToExec())
 	{
 		if (this->_isSigned)
 		{

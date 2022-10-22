@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 04:27:39 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/22 05:58:03 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/22 06:11:19 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,20 +52,20 @@ void	ShrubberyCreationForm::execute(Bureaucrat &b) const
 {
 	std::ofstream os;
 
-	if (b.getGrade() <= this->getMinGradeToSign())
+	if (b.getGrade() <= this->getMinGradeToExec())
 	{
 		if (this->_isSigned)
 		{
-			os.open(this->getTarget() + "_shrubbery", std::ofstream::out | std::ofstream::app);
+			os.open(this->getTarget() + "_shrubbery", std::ofstream::out);
 			if (os.is_open())
 			{
 				os << "\
-                        ###\
-                       #o###\
-                     #####o###\
-                    #o#\\#|#/###\
-                     ###\\|/#o#\
-                      # }|{  #\
+                        ###\n\
+                       #o###\n\
+                     #####o###\n\
+                    #o#\\#|#/###\n\
+                     ###\\|/#o#\n\
+                      # }|{  #\n\
                         }|{" << std::endl;
 				
 			}

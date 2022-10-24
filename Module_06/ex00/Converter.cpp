@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 20:04:36 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/24 03:55:07 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/24 20:21:59 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,32 @@ bool	Converter::isDouble(void) const
 	return (true);
 }
 
+bool	Converter::isDouble(str_t input) const
+{
+	int		i;
+	bool	dPoint;
+	
+	i = -1;
+	dPoint = false;
+	while (++i < (int) input.size())
+	{
+		if (i == 0 && isSign(input[i]))
+			continue ;
+		if (!dPoint && input[i] == '.')
+		{
+			dPoint = true;
+			continue ;
+		}
+		if (dPoint && input[i] == '.')
+			return (false);
+		if (!isdigit(input[i]))
+			return (false);
+	}
+	if (!isdigit(input[i - 1]) || !dPoint)
+		return (false);
+	return (true);
+}
+
 bool	Converter::isFloat(void) const
 {
 	str_t	tmp;
@@ -114,7 +140,7 @@ bool	Converter::isFloat(void) const
 
 	tmp = this->input;
 	tmp = tmp.substr(0, this->input.length() - 1);
-	res = (this->isDouble() && tmp[this->input.length() - 1] == 'f');
+	res = (this->isDouble(tmp) && this->input[this->input.length() - 1] == 'f');
 	return (res);
 }
 
@@ -127,37 +153,79 @@ void	Converter::printChar(void) const
 {
 	char	toPrint;
 
-	toPrint = static_cast<char> (std::strtof(this->input.c_str(), NULL));
-	std::cout << "char	: ";
-	if (isprint(toPrint))
-		std::cout <<  toPrint << std::endl;
-	else
-		std::cout <<  "Non-printable" << std::endl;
-		
+	try
+	{
+		toPrint = std::stoi(this->input);
+		if (isprint(toPrint))
+			std::cout << "char	: '" << toPrint << "'" << std::endl;
+		else
+			std::cout << "char	: {Non-printable}" << std::endl;
+	}
+	catch (const std::invalid_argument & e)
+	{
+		std::cerr << "char	: {impossible}" << std::endl;
+	}
+	catch (const std::out_of_range & e) 
+	{
+    	std::cerr << "char	: {Overflow error}" << std::endl;
+  	}
 }
 
 void	Converter::printInt(void) const
 {
 	int	toPrint;
 
-	toPrint = static_cast<int> (std::atoi(this->input.c_str()));;
-	std::cout << "int	: " << toPrint << std::endl;
+	try
+	{
+		toPrint = std::stoi(this->input);
+		std::cout << "int	: " << toPrint << std::endl;
+	}
+	catch (const std::invalid_argument & e)
+	{
+		std::cerr << "int	: {impossible}" << std::endl;
+	}
+	catch (const std::out_of_range & e) 
+	{
+    	std::cerr << "int	: {Overflow error}" << std::endl;
+  	}
 }
 
 void	Converter::printFloat(void) const
 {
 	float	toPrint;
 
-	toPrint = static_cast<float> (std::strtof(this->input.c_str(), NULL));
-	std::cout << "float	: " << toPrint << ((toPrint == static_cast<float> (toPrint)) ? "f" : ".0f" ) << std::endl;
+	try
+	{
+		toPrint = std::stof(this->input);
+		std::cout << "float	: " << std::fixed << std::setprecision(1) << toPrint << "f" << std::endl;
+	}
+	catch (const std::invalid_argument & e)
+	{
+		std::cout << "float	: {impossible}" << std::endl;
+	}
+	catch (const std::out_of_range & e) 
+	{
+    	std::cerr << "float	: {Overflow error}" << std::endl;
+  	}
 }
 
 void	Converter::printDouble(void) const
 {
 	double	toPrint;
 
-	toPrint = static_cast<double> (std::strtof(this->input.c_str(), NULL));
-	std::cout << "double	: " << toPrint << (toPrint == static_cast<double> (toPrint) ? "" : ".0") << std::endl;
+	try
+	{
+		toPrint = std::stof(this->input);
+		std::cout << "double	: " << std::fixed << std::setprecision(1) << toPrint << std::endl;
+	}
+	catch (const std::invalid_argument & e)
+	{
+		std::cout << "double	: {impossible}" << std::endl;
+	}
+	catch (const std::out_of_range & e) 
+	{
+    	std::cerr << "double	: {Overflow error}" << std::endl;
+  	}
 }
 
 void    Converter::printResults(void) const

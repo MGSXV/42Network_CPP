@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 20:04:52 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/24 01:43:43 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/24 20:13:56 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 # define __CONVERTER_H__
 
 # include <iostream>
+# include <string>
 # include <limits>
+# include <iomanip>
 
 typedef std::string	str_t;
 
@@ -29,6 +31,7 @@ class	Converter
 		bool	isInt(void) const;
 		bool	isFloat(void) const;
 		bool	isDouble(void) const;
+		bool	isDouble(str_t input) const;
 		bool	isValid(void) const;
 		void	printChar(void) const;
 		void	printInt(void) const;

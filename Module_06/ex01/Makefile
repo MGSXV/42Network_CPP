@@ -6,7 +6,7 @@
 #    By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 20:28:27 by sel-kham          #+#    #+#              #
-#    Updated: 2022/10/24 20:28:52 by sel-kham         ###   ########.fr        #
+#    Updated: 2022/10/25 22:31:55 by sel-kham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ C98 := -std=c++98
 # Base variables
 NAME := serialization
 MAIN := main.cpp
-FNAME := Converter
+FNAME := 
 REMOVE := rm -rf
 
 # Headers

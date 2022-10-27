@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 20:04:36 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/10/24 20:21:59 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/10/27 22:04:57 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,7 +155,10 @@ void	Converter::printChar(void) const
 
 	try
 	{
-		toPrint = std::stoi(this->input);
+		if (this->isChar())
+			toPrint = static_cast<char> (this->input[0]);
+		else
+			toPrint = std::stoi(this->input);
 		if (isprint(toPrint))
 			std::cout << "char	: '" << toPrint << "'" << std::endl;
 		else
@@ -177,7 +180,10 @@ void	Converter::printInt(void) const
 
 	try
 	{
-		toPrint = std::stoi(this->input);
+		if (this->isChar())
+			toPrint = static_cast<int> (this->input[0]);
+		else
+			toPrint = std::stoi(this->input);
 		std::cout << "int	: " << toPrint << std::endl;
 	}
 	catch (const std::invalid_argument & e)
@@ -196,7 +202,10 @@ void	Converter::printFloat(void) const
 
 	try
 	{
-		toPrint = std::stof(this->input);
+		if (this->isChar())
+			toPrint = static_cast<int> (this->input[0]);
+		else
+			toPrint = std::stof(this->input);
 		std::cout << "float	: " << std::fixed << std::setprecision(1) << toPrint << "f" << std::endl;
 	}
 	catch (const std::invalid_argument & e)
@@ -215,7 +224,10 @@ void	Converter::printDouble(void) const
 
 	try
 	{
-		toPrint = std::stof(this->input);
+		if (this->isChar())
+			toPrint = static_cast<int> (this->input[0]);
+		else
+			toPrint = std::stod(this->input);
 		std::cout << "double	: " << std::fixed << std::setprecision(1) << toPrint << std::endl;
 	}
 	catch (const std::invalid_argument & e)

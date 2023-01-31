@@ -6,7 +6,7 @@
 #    By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/31 19:03:45 by sel-kham          #+#    #+#              #
-#    Updated: 2022/12/31 19:04:30 by sel-kham         ###   ########.fr        #
+#    Updated: 2023/01/31 18:11:08 by sel-kham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ HEADERS := $(addsuffix .hpp, $(FNAME))
 all: $(NAME)
 	@echo "\n\t\t$(BBLACK)You are ready to go...$(WHITE)\n"
 
-$(NAME): $(MAIN)
+$(NAME): $(MAIN) $(HEADERS)
 	@echo "\t$(YELLOW)Compiling $(GREEN)$(NAME) $(CYAN)executable file...$(WHITE)"
 	@$(CPP) $(CFLAGS) $(C98) $(MAIN) -o $(NAME)
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 15:50:28 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/12/31 16:31:32 by sel-kham         ###   ########.fr       */
+/*   Updated: 2023/03/03 21:00:16 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,13 @@
 
 template <typename tt>
 void	iter(tt arr[], size_t len, void (*f)(tt &m))
+{
+	for (size_t i = 0; i < len; i++)
+		f(arr[i]);
+}
+
+template <typename tt>
+void	iter(tt const arr[], size_t len, void (*f)(tt const &m))
 {
 	for (size_t i = 0; i < len; i++)
 		f(arr[i]);

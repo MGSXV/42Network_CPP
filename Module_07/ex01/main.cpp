@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 15:50:17 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/12/31 16:34:43 by sel-kham         ###   ########.fr       */
+/*   Updated: 2023/03/03 21:00:50 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,10 @@ void	plusten(int &n)
 }
 
 template <typename tt>
-void	plusone(tt &t)
+void	printcomp(tt const &t)
 {
-	t = t + 1;
+	// t = (tt) t + 1;
+	std::cout << t << std::endl;
 }
 
 int	main(void)
@@ -44,12 +45,12 @@ int	main(void)
 	for (int i = 0; i < 3; i++)
 		std::cout << nums[i] << std::endl;
 	std::cout << "----------------------------" << std::endl;
-	iter(nums, 3, plusone);
+	iter(nums, 3, printcomp);
 	for (int i = 0; i < 3; i++)
 		std::cout << nums[i] << std::endl;
 	std::cout << "----------------------------" << std::endl;
 	char cs[] = {'a', 'b', 'c'};
-	iter(cs, 3, plusone);
+	iter(cs, 3, printcomp);
 	for (int i = 0; i < 3; i++)
 		std::cout << cs[i] << std::endl;
 	return (0);

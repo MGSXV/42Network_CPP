@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 19:04:37 by sel-kham          #+#    #+#             */
-/*   Updated: 2023/01/31 17:58:25 by sel-kham         ###   ########.fr       */
+/*   Updated: 2023/03/05 22:58:31 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(void)
 		vc.push_back(i);
 	try
 	{
-		std::cout << easyfind(vc, 1000) << std::endl;
+		std::cout << *easyfind(vc, 1000) << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -43,7 +43,7 @@ int	main(void)
 		dq.push_back(i);
 	try
 	{
-		std::cout << easyfind(dq, 99) << std::endl;
+		std::cout << *easyfind(dq, 99) << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -58,7 +58,7 @@ int	main(void)
 		lst.push_front(i);
 	try
 	{
-		std::cout << easyfind(lst, 99) << std::endl;
+		std::cout << *easyfind(lst, 99) << std::endl;
 	}
 	catch(const std::exception& e)
 	{

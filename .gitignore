@@ -32,6 +32,7 @@
 *.app
 
 # costum
+.DS_Store
 *.json
 *.log
 *.dSYM

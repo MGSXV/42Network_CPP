@@ -6,7 +6,7 @@
 #    By: sel-kham <sel-kham@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/10 18:22:45 by sel-kham          #+#    #+#              #
-#    Updated: 2023/02/10 19:05:30 by sel-kham         ###   ########.fr        #
+#    Updated: 2023/03/08 04:57:19 by sel-kham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,15 +35,18 @@ REMOVE := rm -rf
 # Headers
 HEADERS := $(addsuffix .hpp, $(FNAME))
 
+# Source files
+TP := $(addsuffix .tpp, $(FNAME))
+
 # Makefile basecode
 .PHONY: all clean fclean re
 
 all: $(NAME)
 	@echo "\n\t\t$(BBLACK)You are ready to go...$(WHITE)\n"
 
-$(NAME): $(MAIN) $(HEADERS)
+$(NAME): $(MAIN) $(HEADERS) $(TP)
 	@echo "\t$(YELLOW)Compiling $(GREEN)$(NAME) $(CYAN)executable file...$(WHITE)"
-	@$(CPP) $(CFLAGS) $(C98) $(MAIN) -o $(NAME)
+	@$(CPP) $(CFLAGS) $(C98) $(MAIN) $(OBJ) -o $(NAME)
 
 clean:
 	@echo "\t$(RED)Removing $(CYAN)executable file...$(WHITE)"

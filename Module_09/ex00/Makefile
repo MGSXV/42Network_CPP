@@ -6,7 +6,7 @@
 #    By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/07 17:19:24 by sel-kham          #+#    #+#              #
-#    Updated: 2023/05/08 19:05:06 by sel-kham         ###   ########.fr        #
+#    Updated: 2023/05/18 22:14:25 by sel-kham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ CPP := c++
 
 # Flags
 CFLAGS :=
-C98 := -std=c++98
+C98 := -Wall -Wextra -Werror -std=c++98
 
 # Base variables
 NAME := btc

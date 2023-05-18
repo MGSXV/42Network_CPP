@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 23:27:02 by sel-kham          #+#    #+#             */
-/*   Updated: 2023/05/17 00:46:08 by sel-kham         ###   ########.fr       */
+/*   Updated: 2023/05/18 22:37:05 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	ops_handler(char c, rpn_t &stk)
 	int	a, b;
 	if (stk.size() < 2)
 		error_exit("Invalid input!");
-	a = stk.top();
-	stk.pop();
 	b = stk.top();
+	stk.pop();
+	a = stk.top();
 	stk.pop();
 	if (c == '+')
 		a += b;
@@ -33,7 +33,7 @@ void	ops_handler(char c, rpn_t &stk)
 		a -= b;
 	else if (c == '*')
 		a *= b;
-	else if (c == '/' && a != 0)
+	else if (c == '/' && b != 0)
 		a /= b;
 	else
 		error_exit("Dividing by 0!");
@@ -59,6 +59,7 @@ void	parse(str_t input, rpn_t &stk)
 	i = -1;
 	while (input.size())
 	{
+		// std::cout << input << std::endl;
 		decide(input[0], stk);
 		input.erase(0, 1);
 	}

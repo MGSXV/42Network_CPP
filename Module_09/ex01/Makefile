@@ -6,7 +6,7 @@
 #    By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 23:32:28 by sel-kham          #+#    #+#              #
-#    Updated: 2023/05/16 23:33:51 by sel-kham         ###   ########.fr        #
+#    Updated: 2023/05/18 22:28:36 by sel-kham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ CPP := c++
 
 # Flags
 CFLAGS :=
-C98 := -std=c++98
+C98 := -Wall -Wextra -Werror -g -std=c++98
 
 # Base variables
 NAME := RPN

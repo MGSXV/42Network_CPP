@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 17:19:43 by sel-kham          #+#    #+#             */
-/*   Updated: 2023/05/08 19:05:16 by sel-kham         ###   ########.fr       */
+/*   Updated: 2023/05/26 15:23:00 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,8 @@ static void	fatal_error(const char *err_msg)
 	exit(EXIT_FAILURE);
 }
 
-void	leaks(void)
-{
-	system("leaks btc");
-}
-
 int	main(int c, char **v)
 {
-	// atexit(leaks);
 	if (c != 2)
 		fatal_error(INPUT_ERR);
 	try

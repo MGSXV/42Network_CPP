@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 17:20:24 by sel-kham          #+#    #+#             */
-/*   Updated: 2023/05/16 02:02:01 by sel-kham         ###   ########.fr       */
+/*   Updated: 2023/05/25 22:00:11 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ private:
 	const str_t			inputFile;
 	// Private class methods
 	void	line_parser(str_t &str, const char sep, str_t det);
-	void	fileReader(std::ifstream &stream, const char sep, const char *header, map_t &map, str_t det);
+	void	fileReader(std::ifstream &stream, const char sep, const char *header, str_t det);
 	bool	dateParser(str_t &date);
 	void	floatParser(str_t &val);
 	int		intParser(str_t &val);

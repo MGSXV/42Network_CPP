@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 16:59:12 by sel-kham          #+#    #+#             */
-/*   Updated: 2023/05/16 23:19:39 by sel-kham         ###   ########.fr       */
+/*   Updated: 2023/05/26 15:22:18 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@ const str_t BitcoinExchange::dataFile = "data.csv";
 BitcoinExchange::BitcoinExchange(void) { }
 
 BitcoinExchange::BitcoinExchange(const char *filename) : dataStream(BitcoinExchange::dataFile), inputStream(filename), inputFile(filename)
-{
-	
+{	
 	if (!this->inputFile.c_str() || !this->inputFile[0])
 		throw std::runtime_error(INPUT_ERR);
 	if (!dataStream.is_open())
@@ -86,7 +85,7 @@ void	BitcoinExchange::analyze(void)
 {
 	
 	this->dataParser();
-	this->fileReader(this->inputStream, '|', "date | value", this->input, str_t("input"));
+	this->fileReader(this->inputStream, '|', "date | value", str_t("input"));
 }
 #include <iomanip>
 
@@ -111,7 +110,7 @@ void	BitcoinExchange::getResults(void)
 		throw BitcoinExchange::OldDateException();
 }
 
-void	BitcoinExchange::fileReader(std::ifstream &stream, const char sep, const char *header, map_t &map, str_t det)
+void	BitcoinExchange::fileReader(std::ifstream &stream, const char sep, const char *header, str_t det)
 {
 	str_t	line;
 

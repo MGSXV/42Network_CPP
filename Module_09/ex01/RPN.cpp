@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 23:27:02 by sel-kham          #+#    #+#             */
-/*   Updated: 2023/05/18 22:37:05 by sel-kham         ###   ########.fr       */
+/*   Updated: 2023/05/26 15:23:27 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ void	parse(str_t input, rpn_t &stk)
 	i = -1;
 	while (input.size())
 	{
-		// std::cout << input << std::endl;
 		decide(input[0], stk);
 		input.erase(0, 1);
 	}
